@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Lucide icons  -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Winter Bubble font -->
+    <link href="https://fonts.cdnfonts.com/css/winter-bubble" rel="stylesheet">
+    <!-- Almarai font -->
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- custom css for tailwind -->
+    <style type="text/tailwindcss">
+        @theme {
+        --font-winter-bubble: "Winter Bubble", sans-serif;
+        --font-almarai : "Almarai", sans-serif;
+  }
+     </style>
+    <title>SOFRAH</title>
+</head>
+
+<body dir="rtl">
+    <header>
+        <!-- start banner section for location & social icons -->
+        <section class="flex items-center justify-between w-full py-2 bg-[#072F25] px-8 md:px-25 banner-section">
+            <div class="flex items-center gap-[5px] md:gap-[10px] sofrah-loction">
+                <div class="flex items-center gap-[5px] md:gap-[10px] pl-2 md:pl-5">
+                    <i data-lucide="map-pin" class="text-[#FCB53B] w-[15px] h-[15px]"></i>
+                    <p class=" m-0 p-0 text-white text-[11px] md:text-[14px]"> السعودية، الرياض</p>
+                </div>
+                <div class="hidden md:flex items-center gap-[5px] md:gap-[10px] border-r border-white px-5">
+                    <i data-lucide="mail" class="text-[#FCB53B] w-[15px] h-[15px]"></i>
+                    <p class="m-0 p-0 text-white text-[14px]">info@sofrah.com</p>
+                </div>
+                <div class="flex items-center gap-2 border-r border-white pr-2 md:pr-5">
+                    <i data-lucide="clock" class="text-[#FCB53B] w-[15px] h-[15px]"></i>
+                    <p class="m-0 p-0 text-white text-[11px] md:text-[14px] ">مواقيت العمل من 9 صباحاً إلي 10 مساء</p>
+                </div>
+            </div>
+            <!-- social icons hidden & md:block -->
+            <div class="flex items-center sofrah-media">
+                <div class="hidden md:block sofrah-phone">
+                    <div class="flex items-center gap-[10px] pl-5">
+                        <i data-lucide="phone" class="text-[#FCB53B] w-[15px] h-[15px]"></i>
+                        <p class="m-0 p-0 text-white text-[14px] ">+922 254 548 524</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-2  pr-5 border-r border-white social-icons">
+                    <span class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
+                        <i data-lucide="instagram" class="text-white w-[15px] h-[15px]"></i>
+                    </span>
+                    <span class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
+                        <i data-lucide="instagram" class="text-white w-[15px] h-[15px]"></i>
+                    </span>
+                    <span class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
+                        <i data-lucide="instagram" class="text-white w-[15px] h-[15px]"></i>
+                    </span>
+                    <span class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
+                        <i data-lucide="facebook" class="text-white w-[15px] h-[15px]"></i>
+                    </span>
+                </div>
+
+            </div>
+        </section>
+        <!-- end banner section for location & social icons -->
+
+        <!-- start navbar section -->
+        <nav class="w-full z-50 navbar-section">
+            <div class="max-w-7xl mx-auto px-4 md:px-[150px]">
+                <div class="flex items-center justify-between h-[76.5px]">
+                    <!-- logo sofrah -->
+                    <div class="logo">
+                        <h1
+                            class="font-winter-bubble font-normal text-[40px] md:text-[50px]  leading-[24.99px] tracking-[0] uppercase">
+                            Sofrah
+                        </h1>
+                    </div>
+                    <!-- Menu Button (Mobile) -->
+                    <div class="flex items-center w-full justify-between md:hidden">
+
+                        <div class="flex items-center gap-3 ">
+                            <button id="menu-btn" aria-label="menu button" class="text-gray-700 focus:outline-none">
+                                <i data-lucide="menu" class="text-black w-[22px] h-[22px]"></i>
+                            </button>
+                            <div class="flex items-center gap-3">
+                                <button aria-label="account" class="border border-gray-300 border-1 p-2 rounded-full">
+                                    <i data-lucide="user-round" class="text-black w-[20px] h-[20px]"></i>
+                                </button>
+                                <button aria-label="favorite" class="border border-gray-300 border-1 p-2 rounded-full">
+                                    <i data-lucide="heart" class="text-black w-[20px] h-[20px]"></i>
+                                </button>
+                                <button aria-label="search" class="border border-gray-300 border-1 p-2 rounded-full">
+                                    <i data-lucide="search" class="text-black w-[20px] h-[20px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu Links -->
+                    <div id="menu" class="hidden md:block">
+                        <ul class="flex gap-3 items-center nav-list">
+                            <li class="nav-item">
+                                <a href="#"
+                                    class="text-[16px] hover:text-[#072F25] cursor-pointer text-almarai">المدونة</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer text-almarai">العروض
+                                    والخصومات</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer text-almarai">قائمة
+                                    الطعام</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer text-almarai">الأطباق
+                                    الرئيسية</a>
+                            </li>
+                            <li class="hover:text-[#072F25] nav-item">
+                                <a href="#" class="text-[16px]  cursor-pointer text-almarai flex items-center gap-1">
+                                    <span>
+                                        <i data-lucide="chevron-down" class="text-black w-[15px] h-[15px]"></i>
+                                    </span>
+                                    <span>الرئيسية</span>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <button aria-label="account"
+                            class="border border-gray-300 rounded-full w-9 h-9 flex items-center justify-center">
+                            <i data-lucide="user-round" class="text-black w-[20px] h-[20px]"></i>
+                        </button>
+                        <button aria-label="favorite"
+                            class="border border-gray-300 rounded-full w-9 h-9 flex items-center justify-center">
+                            <i data-lucide="heart" class="text-black w-[20px] h-[20px]"></i>
+                        </button>
+                        <button aria-label="shopping cart"
+                            class="border border-gray-300 rounded-full w-9 h-9 flex items-center justify-center">
+                            <i data-lucide="shopping-cart" class="text-black w-[20px] h-[20px]"></i>
+                        </button>
+                        <button aria-label="search"
+                            class="border border-gray-300 rounded-full w-9 h-9 flex items-center justify-center">
+                            <i data-lucide="search" class="text-black w-[20px] h-[20px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+                <ul class="flex flex-col gap-2">
+                    <li class="nav-item">
+                        <a href="#"
+                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">المدونة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"
+                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">العروض
+                            والخصومات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"
+                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">قائمة
+                            الطعام</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"
+                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">الأطباق
+                            الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"
+                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">الرئيسية</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- end navbar section -->
+
+        <!-- start Hero section -->
+        <main class="bg-[#F7F2E2] w-full h-[405px] md:h-[790px] py-6 px-1 md:px-16 hero-section">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-5">
+                <!-- right side -->
+                <div class="hidden md:block overflow-hidden show-sandwich-container">
+                    <img src="assets/images/tomato.png" alt="tomato"
+                        class=" w-[200px] -rotate-[13.5deg] object-contain" />
+                </div>
+                <!-- middle side -->
+                <div class="flex flex-col items-center justify-center max-w-md md:max-w-lg text-center">
+                    <h2 class="font-bold mb-4 text-almarai text-2xl md:text-3xl hidden md:block">
+                        نكهاتنا المميزة توصل لسفرتك بكل حب
+                    </h2>
+                    <p class="mb-8 text-[14px] md:text-[20px] text-almarai hidden md:block">
+                        استمتع بأشهى الأطباق الطازجة، محضرة بعناية، تجمع بين الوصفات التقليدية والنكهات العصرية
+                    </p>
+
+                    <h2 class="font-bold mb-4 text-almarai text-2xl md:text-3xl block md:hidden">
+                        مطعمك المفضل ودع النكهات تجيك لحد عندك
+                    </h2>
+                    <p class="mb-8 text-[14px] md:text-[20px] text-almarai block md:hidden">
+                        استمتع بأطباق طازجة، محضّرة بعناية، تمزج بين الوصفات التقليدية والمذاق العصري
+                    </p>
+
+                    <button
+                        class="bg-[#EB1400] hover:bg-red-600 text-white font-bold w-[130px] md:w-[174px] h-[40px] md:h-[52px] px-2 rounded-full shadow-lg flex items-center justify-between transition duration-300">
+                        <span>اطلب الآن</span>
+                        <span class="mr-2 bg-white p-1 md:p-2 rounded-full">
+                            <i data-lucide="move-up-left" class="text-red-600 w-5 h-5"></i>
+                        </span>
+                    </button>
+                </div>
+                <!-- left side -->
+                <div class="hidden md:block relative show-sandwich-container">
+                    <img src="assets/images/fresh-basil-leaves.png" alt="fresh-basil-leaves"
+                        class="absolute left-[10px] -top-[70px] w-[215px] h-[215px] -rotate-[27.87deg] object-contain" />
+                    <img src="assets/images/empty-wood-plate.png" alt="empty-wood-plate.png"
+                        class="absolute -top-[100px] left-[40px] w-[235px] h-[235px] -rotate-[17.85deg] object-contain" />
+                    <img src="assets/images/sandwich-with-meet-cheese.png" alt="sandwich meet with cheese"
+                        class="absolute -top-[65px] left-[62px] w-[175px] h-[175px] -rotate-[2.87deg] object-contain" />
+                </div>
+            </div>
+
+            <!--  slider hero -->
+            <div class="w-full mx-auto flex flex-col items-center">
+                <div class="relative w-full overflow-hidden">
+                    <!-- Swiper -->
+                    <div class="swiper hero-swiper w-full h-full border border-[#FF9924] border-2 rounded-full">
+                        <div class="swiper-wrapper border border-black border-4 rounded-full">
+                            <div class="swiper-slide">
+                                <img src="/assets/images/slider-1.png" alt="slider-1 image"
+                                    class="rounded-full block object-cover w-full h-[150px] md:h-[460px]" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/assets/images/slider-2.png" alt="slider-1 image"
+                                    class="rounded-full block object-cover w-full  h-[150px] md:h-[460px]" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/assets/images/slider-3.png" alt="slider-1 image"
+                                    class="rounded-full block object-cover w-full  h-[150px] md:h-[460px]" />
+                            </div>
+                        </div>
+                        <!-- Navigation buttons -->
+                        <div class="swiper-button-next bg-[#072F25] border border-white rounded-full">
+                        </div>
+                        <div class="swiper-button-prev bg-[#072F25] border border-white rounded-full">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+        <!-- end Hero section -->
+    </header>
+
+    <!-- start categories section -->
+    <section class="categories-section px-1 md:px-15 py-20 space-y-20">
+        <div class="flex flex-col items-center gap-3 categories-scrtion-title">
+            <h2 class="font-almarai font-bold text-[28px]">استكشف أقسام <span class="text-[#EB1400]">قائمتنا</span></h2>
+            <p class="font-almarai font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">من المذاق الشرقي
+                الأصيل إلى النكهات العالمية… في سفرة، كل طبق هو حكاية</p>
+            <div class="relative flex items-center justify-center w-[315px] h-[6px]">
+                <div class="absolute w-[15px] h-[6] bg-[#3F9065] inset-0" style="border-radius: 10px 5px 5px 3px;">
+                </div>
+                <div class="absolute w-full h-[2px] bg-[#3F9065]"></div>
+                <div class="absolute left-4 flex gap-1">
+                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
+                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
+                </div>
+
+                <div class="absolute right-4 flex gap-1">
+                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
+                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
+                </div>
+                <div class="relative w-3 h-3 bg-[#3F9065] rotate-45"></div>
+            </div>
+
+
+        </div>
+
+        <!-- categories cards -->
+        <!-- Swiper -->
+        <div class="py-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="swiper categories-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide -->
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        فطائر
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>23</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/frensh-fries.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-600 group-hover:-rotate-[20deg]" />
+                                <div class="font-almarai transition-all duration-500">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide w-[165px]">
+                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
+                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
+                                <img src="assets/images/فطائر.png" alt="category-title"
+                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
+                                <div class="font-almarai transition-all duration-300">
+                                    <h5
+                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
+                                        معجنات
+                                    </h5>
+                                    <div
+                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
+                                        <p>وجبة متاحة</p>
+                                        <span>15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-next bg-[#EB1400] border border-white rounded-full">
+                    </div>
+                    <div class="swiper-button-prev bg-[#EB1400] border border-white rounded-full">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end categories section -->
+
+
+    <!-- start products section -->
+    <section class="products-section px-1 md:px-15 pb-20 space-y-20">
+        <div class="flex flex-col items-center gap-3 categories-scrtion-title">
+            <h2 class="font-almarai font-bold text-[28px]">تجربة فاخرة بسعر أخف</h2>
+            <p class="font-almarai font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">دلّل نفسك بأشهى
+                الأطباق المختارة مع خصومات حصرية</p>
+            <div class="relative flex items-center justify-center w-[315px] h-[6px]">
+                <div class="absolute w-[15px] h-[6] bg-[#3F9065] inset-0" style="border-radius: 10px 5px 5px 3px;">
+                </div>
+                <div class="absolute w-full h-[2px] bg-[#3F9065]"></div>
+                <div class="absolute left-4 flex gap-1">
+                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
+                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
+                </div>
+
+                <div class="absolute right-4 flex gap-1">
+                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
+                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
+                </div>
+                <div class="relative w-3 h-3 bg-[#3F9065] rotate-45"></div>
+            </div>
+
+
+        </div>
+
+        <!-- start products part -->
+        <div class="grid grid-cols-1 md:grid cols-3 lg:grid-cols-4 gap-6">
+            <div class="product-card group">
+                <div class="relative mb-8 product-card-top">
+                    <p
+                        class="bg-[#EB1400] text-white w-[95px] py-2 text-center  rounded-[27px_8px_8px_0px] absolute top-[10%] left-0">
+                        20% خصم </p>
+                    <div
+                        class="absolute right-[2%] top-[11%] -translate-y-1 space-y-3 pr-5 transform transition-all duration-500 ease-in-out 
+                               opacity-0 invisible translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible">
+                        <button aria-label="favorite"
+                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+                            <i data-lucide="heart" class="text-[#072F25] w-[18px] h-[18px]"></i>
+                        </button>
+
+                        <button aria-label="details"
+                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+                            <i data-lucide="eye" class="text-[#072F25] w-[18px] h-[18px]"></i>
+                        </button>
+                    </div>
+                    <div
+                        class="product-image w-full h-[280px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] bg-[#F7F2E2] flex items-center justify-center rounded-[80px]">
+                        <img src="assets/images/product-1.png" alt=""
+                            class="m-auto w-[230px] object-fit group-hover:-rotate-[15deg] duration-900 transition-all">
+                    </div>
+                    <button
+                        class="flex items-center justify-center gap-3 bg-[#FF9924] rounded-full w-[169px] h-[48px] font-almarai absolute -bottom-[7%] left-[22%] group-hover:bg-[#EB1400] group-hover:text-white transition-all duration-500 ease-in-out">
+                        <span>
+                            <i data-lucide="shopping-cart" class="w-[14px] h-[14px] italic"></i>
+                        </span>
+                        <span>إضافة إلي السلة </span>
+                    </button>
+                </div>
+                <div class="product-details text-center space-y-1.5 font-almarai">
+                    <h6 class="font-bold text-[18px]">ساندوتش تركي مدخن </h6>
+                    <p class="text-[14px] text-[#525252]">شرائح تركي مدخن من المخلل وصوص خاص داخل خبر تست محمص شهي</p>
+                    <div class="flex items-center justify-center gap-2">
+                        <p class="text-[#EB1400] font-extrabold">16 رس</p>
+                        <del class="text-[#9D9D9D] text-[16px]"> 24 رس </del>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card group">
+                <div class="relative mb-8 product-card-top">
+                    <p
+                        class="bg-[#EB1400] text-white w-[95px] py-2 text-center  rounded-[27px_8px_8px_0px] absolute top-[10%] left-0">
+                        20% خصم </p>
+                    <div
+                        class="absolute right-[2%] top-[11%] -translate-y-1 space-y-3 pr-5 transform transition-all duration-500 ease-in-out 
+                               opacity-0 invisible translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible">
+                        <button aria-label="favorite"
+                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+                            <i data-lucide="heart" class="text-[#072F25] w-[18px] h-[18px]"></i>
+                        </button>
+
+                        <button aria-label="details"
+                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+                            <i data-lucide="eye" class="text-[#072F25] w-[18px] h-[18px]"></i>
+                        </button>
+                    </div>
+                    <div
+                        class="product-image w-full h-[280px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] bg-[#F7F2E2] flex items-center justify-center rounded-[80px]">
+                        <img src="assets/images/product-1.png" alt=""
+                            class="m-auto w-[230px] object-fit group-hover:-rotate-[15deg] duration-900 transition-all">
+                    </div>
+                    <button
+                        class="flex items-center justify-center gap-3 bg-[#FF9924] rounded-full w-[169px] h-[48px] font-almarai absolute -bottom-[7%] left-[22%] group-hover:bg-[#EB1400] group-hover:text-white transition-all duration-500 ease-in-out">
+                        <span>
+                            <i data-lucide="shopping-cart" class="w-[14px] h-[14px] italic"></i>
+                        </span>
+                        <span>إضافة إلي السلة </span>
+                    </button>
+                </div>
+                <div class="product-details text-center space-y-1.5 font-almarai">
+                    <h6 class="font-bold text-[18px]">ساندوتش تركي مدخن </h6>
+                    <p class="text-[14px] text-[#525252]">شرائح تركي مدخن من المخلل وصوص خاص داخل خبر تست محمص شهي</p>
+                    <div class="flex items-center justify-center gap-2">
+                        <p class="text-[#EB1400] font-extrabold">16 رس</p>
+                        <del class="text-[#9D9D9D] text-[16px]"> 24 رس </del>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card group">
+                <div class="relative mb-8 product-card-top">
+                    <p
+                        class="bg-[#EB1400] text-white w-[95px] py-2 text-center  rounded-[27px_8px_8px_0px] absolute top-[10%] left-0">
+                        20% خصم </p>
+                    <div
+                        class="absolute right-[2%] top-[11%] -translate-y-1 space-y-3 pr-5 transform transition-all duration-500 ease-in-out 
+                               opacity-0 invisible translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible">
+                        <button aria-label="favorite"
+                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+                            <i data-lucide="heart" class="text-[#072F25] w-[18px] h-[18px]"></i>
+                        </button>
+
+                        <button aria-label="details"
+                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+                            <i data-lucide="eye" class="text-[#072F25] w-[18px] h-[18px]"></i>
+                        </button>
+                    </div>
+                    <div
+                        class="product-image w-full h-[280px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] bg-[#F7F2E2] flex items-center justify-center rounded-[80px]">
+                        <img src="assets/images/product-1.png" alt=""
+                            class="m-auto w-[230px] object-fit group-hover:-rotate-[15deg] duration-900 transition-all">
+                    </div>
+                    <button
+                        class="flex items-center justify-center gap-3 bg-[#FF9924] rounded-full w-[169px] h-[48px] font-almarai absolute -bottom-[7%] left-[22%] group-hover:bg-[#EB1400] group-hover:text-white transition-all duration-500 ease-in-out">
+                        <span>
+                            <i data-lucide="shopping-cart" class="w-[14px] h-[14px] italic"></i>
+                        </span>
+                        <span>إضافة إلي السلة </span>
+                    </button>
+                </div>
+                <div class="product-details text-center space-y-1.5 font-almarai">
+                    <h6 class="font-bold text-[18px]">ساندوتش تركي مدخن </h6>
+                    <p class="text-[14px] text-[#525252]">شرائح تركي مدخن من المخلل وصوص خاص داخل خبر تست محمص شهي</p>
+                    <div class="flex items-center justify-center gap-2">
+                        <p class="text-[#EB1400] font-extrabold">16 رس</p>
+                        <del class="text-[#9D9D9D] text-[16px]"> 24 رس </del>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card group">
+                <div class="relative mb-8 product-card-top">
+                    <p
+                        class="bg-[#EB1400] text-white w-[95px] py-2 text-center  rounded-[27px_8px_8px_0px] absolute top-[10%] left-0">
+                        20% خصم </p>
+                    <div
+                        class="absolute right-[2%] top-[11%] -translate-y-1 space-y-3 pr-5 transform transition-all duration-500 ease-in-out 
+                               opacity-0 invisible translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible">
+                        <button aria-label="favorite"
+                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+                            <i data-lucide="heart" class="text-[#072F25] w-[18px] h-[18px]"></i>
+                        </button>
+
+                        <button aria-label="details"
+                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+                            <i data-lucide="eye" class="text-[#072F25] w-[18px] h-[18px]"></i>
+                        </button>
+                    </div>
+                    <div
+                        class="product-image w-full h-[280px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] bg-[#F7F2E2] flex items-center justify-center rounded-[80px]">
+                        <img src="assets/images/product-1.png" alt=""
+                            class="m-auto w-[230px] object-fit group-hover:-rotate-[15deg] duration-900 transition-all">
+                    </div>
+                    <button
+                        class="flex items-center justify-center gap-3 bg-[#FF9924] rounded-full w-[169px] h-[48px] font-almarai absolute -bottom-[7%] left-[22%] group-hover:bg-[#EB1400] group-hover:text-white transition-all duration-500 ease-in-out">
+                        <span>
+                            <i data-lucide="shopping-cart" class="w-[14px] h-[14px] italic"></i>
+                        </span>
+                        <span>إضافة إلي السلة </span>
+                    </button>
+                </div>
+                <div class="product-details text-center space-y-1.5 font-almarai">
+                    <h6 class="font-bold text-[18px]">ساندوتش تركي مدخن </h6>
+                    <p class="text-[14px] text-[#525252]">شرائح تركي مدخن من المخلل وصوص خاص داخل خبر تست محمص شهي</p>
+                    <div class="flex items-center justify-center gap-2">
+                        <p class="text-[#EB1400] font-extrabold">16 رس</p>
+                        <del class="text-[#9D9D9D] text-[16px]"> 24 رس </del>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- end products section -->
+
+    <!-- start testmonials section -->
+    <section class="reviews px-1 md:px-10 py-20 space-y-20">
+        <div class="flex flex-col items-center gap-3 categories-scrtion-title">
+            <h2 class="font-almarai font-bold text-[28px]">قالوا عن سفرة</h2>
+            <p class="font-almarai font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">آراء عملائنا تثبت
+                تميزنا، وكل تجربة معهم تزيدنا فخر</p>
+            <div class="relative flex items-center justify-center w-[315px] h-[6px]">
+                <div class="absolute w-[15px] h-[6] bg-[#3F9065] inset-0" style="border-radius: 10px 5px 5px 3px;">
+                </div>
+                <div class="absolute w-full h-[2px] bg-[#3F9065]"></div>
+                <div class="absolute left-4 flex gap-1">
+                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
+                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
+                </div>
+
+                <div class="absolute right-4 flex gap-1">
+                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
+                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
+                </div>
+                <div class="relative w-3 h-3 bg-[#3F9065] rotate-45"></div>
+            </div>
+        </div>
+        <!-- start testmonials -->
+        <div class="bg-[#FF9924] w-full h-full rounded-full flex items-start justify-around p-5">
+            <div class="customers">
+                <div class="relative w-full h-full">
+                    <img src="assets/images/customer-1.jpg" alt="Customer 1"
+                        class="absolute top-16 left-1/3 w-20 h-20 rounded-full object-cover border-4 border-white shadow-md cursor-pointer">
+                    <img src="assets/images/customer-2.jpg" alt="Customer 2"
+                        class="absolute top-1/2 left-1/4 w-28 h-28 rounded-full object-cover border-4 border-white shadow-xl cursor-pointer">
+                    <img src="assets/images/customer-3.jpg" alt="Customer 3"
+                        class="absolute top-1/4 right-0 w-24 h-24 rounded-full object-cover border-4 border-white shadow-md cursor-pointer">
+                    <img src="assets/images/customer-4.jpg" alt="Customer 4"
+                        class="absolute bottom-16 right-8 w-16 h-16 rounded-full object-cover border-4 border-white shadow-sm cursor-pointer">
+                    <img src="assets/images/customer-5.jpg" alt="Customer 5"
+                        class="absolute bottom-4 left-1/4 w-20 h-20 rounded-full object-cover border-4 border-white shadow-sm cursor-pointer">
+                </div>
+            </div>
+            <div class="bg-white">
+                <div class="felx">
+                    <p class="text-end text-[100px]"> ,, </p>
+                    <div class="flex bg-white text-[#FF9924]">
+                        <span><i data-lucide="star" class="w-[18px]"></i></span>
+                        <span><i data-lucide="star" class="w-[18px]"></i></span>
+                        <span><i data-lucide="star" class="w-[18px]"></i></span>
+                        <span><i data-lucide="star" class="w-[18px]"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end testmonials section -->
+
+    <!-- start footer section -->
+    <footer class="bg-[#072F25] px-1 md:px-10 w-full pt-20 pb-5 relative overflow-hidden">
+        <img src="assets/images/pizaa.png" alt="pizza image"
+            class="w-[185px] absolute bottom-[82%] left-[45%] object-cover">
+        <div class="flex items-center w-full justify-center gap-7">
+            <div class="h-[1px] w-[471px] bg-[#A1A1A1]"></div>
+            <div class="logo">
+                <h1
+                    class="font-winter-bubble font-normal text-[40px] md:text-[50px]  leading-[24.99px] tracking-[0] uppercase text-white">
+                    Sofrah
+                </h1>
+            </div>
+            <div class="h-[1px] w-[471px] bg-[#A1A1A1]"></div>
+        </div>
+        <div class="flex flex-col md:flex-row flex-wrap items-center md:items-start justify-between gap-5 mt-5 md:mt-8">
+            <div class="my-account">
+                <h5 class="text-[20px] mb-3 text-white">حسابي</h5>
+                <ul class="space-y-3 text-white font-almarai">
+                    <li class="list-item">
+                        <a href="#" class="text-white">حسابى</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="text-[#FF9924]">طلباتي</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="text-white">سلة المشتريات</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="text-white">المفضلة</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="links">
+                <h5 class="text-[20px] mb-3 text-white">روابط مهمة</h5>
+                <ul class="space-y-3 text-white font-almarai">
+                    <li class="list-item">
+                        <a href="#" class="text-white">سياسة الخصوصية</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="text-white">الشحن والاسترجاع</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="text-white">الشروط والأحكام</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="text-white">الدعم الفني</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="connect">
+                <h5 class="text-[20px] mb-3 text-white">تواصل معنا</h5>
+                <ul class="space-y-3 text-white font-almarai">
+                    <li class="flex items-center justify-start gap-2">
+                        <img src="assets/icons/mobile.svg" alt="mobile" class="w-[20px] h-[20px] object-contain" />
+                        <span>009612345678932</span>
+                    </li>
+
+                    <li class="flex items-center justify-start gap-2">
+                        <img src="assets/icons/call.svg" alt="call" class="w-[20px] h-[20px] object-contain" />
+                        <span>009612345678932</span>
+                    </li>
+
+                    <li class="flex items-center justify-start gap-2">
+                        <img src="assets/icons/mail.svg" alt="mail" class="w-[20px] h-[20px] object-contain" />
+                        <span>https://salla.sa</span>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="follow">
+                <h5 class="text-[20px] mb-3 text-white">تابعنا</h5>
+                <div class="flex items-center gap-3">
+                    <button class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
+                        <img src="assets/icons/facebook.svg" alt="facebook" class="w-full h-full object-contain">
+                    </button>
+                    <button class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
+                        <img src="assets/icons/snapchat.svg" alt="snapchat" class="w-full h-full object-contain">
+                    </button>
+                    <button class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
+                        <img src="assets/icons/twitter.svg" alt="twitter" class="w-full h-full object-contain">
+                    </button>
+                    <button class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
+                        <img src="assets/icons/instgram.svg" alt="instgram" class="w-full h-full object-contain">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="border-t pt-2 mt-10 border-[#A1A1A1] grid grid-cols-1 md:grid-cols-3 items-center">
+            <div class="flex items-center gap-1">
+                <img src="assets/images/ضريبة-قيمة-مضافة.svg" alt="ضريبة القيمة المضافة" class="w-[20px]">
+                <p class="text-white">يبريضلا مكرا: 546987552</p>
+            </div>
+            <div class="text-center">
+                <p class="text-white">جميع الحقوق محفوظة</p>
+            </div>
+            <div class="payment-methods flex items-center justify-end gap-3">
+                <img src="assets/images/visa.svg" alt="visa" class="w-[40px] bg-white h-[22px]">
+                <img src="assets/images/mastercard.svg" alt="master card" class="w-[40px] bg-white h-[22px]">
+                <img src="assets/images/paypal.svg" alt="paypal" class="w-[40px] bg-white h-[22px]">
+                <img src="assets/images/mada.svg" alt="mada" class="w-[40px] bg-white h-[22px]">
+            </div>
+        </div>
+    </footer>
+    <!-- end footer section -->
+    <!-- start  scripts  -->
+    <!-- initial lucide icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- main js -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
