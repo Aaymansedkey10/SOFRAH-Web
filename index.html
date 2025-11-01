@@ -10,765 +10,421 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Lucide icons  -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Winter Bubble font -->
-    <link href="https://fonts.cdnfonts.com/css/winter-bubble" rel="stylesheet">
+
     <!-- Almarai font -->
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- custom css for tailwind -->
     <style type="text/tailwindcss">
-        @theme {
-        --font-winter-bubble: "Winter Bubble", sans-serif;
-        --font-almarai : "Almarai", sans-serif;
-  }
-     </style>
+        @layer utilities {
+        .font-almarai {
+          font-family: "Almarai", sans-serif;
+        }
+      }
+    </style>
     <title>SOFRAH</title>
 </head>
 
 <body dir="rtl">
-    <header>
+    <!-- start header section -->
+    <header class="header-section">
         <!-- start banner section for location & social icons -->
-        <section class="flex items-center justify-between w-full py-2 bg-[#072F25] px-8 md:px-25 banner-section">
-            <div class="flex items-center gap-[5px] md:gap-[10px] sofrah-loction">
-                <div class="flex items-center gap-[5px] md:gap-[10px] pl-2 md:pl-5">
-                    <i data-lucide="map-pin" class="text-[#FCB53B] w-[15px] h-[15px]"></i>
-                    <p class=" m-0 p-0 text-white text-[11px] md:text-[14px]"> السعودية، الرياض</p>
+        <section class="flex items-center justify-between w-full py-2 bg-[#072F25] px-8 lg:px-25 banner-section">
+            <div class="flex items-center gap-[5px] lg:gap-[10px] sofrah-loction">
+                <!-- location -->
+                <div class="flex items-center gap-[5px] lg:gap-[10px] pl-2 lg:pl-5">
+                    <img loading="lazy" src="assets/icons/golbal/location.svg" class="w-[15px] h-[15px]"
+                        alt="location-icon">
+                    <p class=" m-0 p-0 text-white text-[11px] lg:text-[14px] font-almarai"> السعودية، الرياض</p>
                 </div>
-                <div class="hidden md:flex items-center gap-[5px] md:gap-[10px] border-r border-white px-5">
-                    <i data-lucide="mail" class="text-[#FCB53B] w-[15px] h-[15px]"></i>
-                    <p class="m-0 p-0 text-white text-[14px]">info@sofrah.com</p>
+                <!-- email  -->
+                <div class="hidden lg:flex items-center gap-[5px] lg:gap-[10px] border-r border-white px-5">
+                    <img loading="lazy" src="assets/icons/social/out-mail.svg" class="w-[15px] h-[15px]"
+                        alt="out-mail-icon">
+                    <p class="m-0 p-0 text-white text-[14px] font-almarai">info@sofrah.com</p>
                 </div>
-                <div class="flex items-center gap-2 border-r border-white pr-2 md:pr-5">
-                    <i data-lucide="clock" class="text-[#FCB53B] w-[15px] h-[15px]"></i>
-                    <p class="m-0 p-0 text-white text-[11px] md:text-[14px] ">مواقيت العمل من 9 صباحاً إلي 10 مساء</p>
+                <!-- work time  -->
+                <div class="flex items-center gap-2 border-r border-white pr-2 lg:pr-5">
+                    <img loading="lazy" src="assets/icons/golbal/time.svg" class="w-[15px] h-[15px]" alt="time-icon">
+                    <p class="m-0 p-0 text-white text-[11px] lg:text-[14px] font-almarai">مواقيت العمل من 9 صباحاً إلي
+                        10 مساء</p>
                 </div>
             </div>
-            <!-- social icons hidden & md:block -->
+            <!-- social icons hidden & lg:block -->
             <div class="flex items-center sofrah-media">
-                <div class="hidden md:block sofrah-phone">
+                <!-- mobile number -->
+                <div class="hidden lg:block">
                     <div class="flex items-center gap-[10px] pl-5">
-                        <i data-lucide="phone" class="text-[#FCB53B] w-[15px] h-[15px]"></i>
-                        <p class="m-0 p-0 text-white text-[14px] ">+922 254 548 524</p>
+                        <img loading="lazy" src="assets/icons/social/call-calling.svg" class="w-[15px] h-[15px]"
+                            alt="phone-icon">
+                        <p class="m-0 p-0 text-white text-[14px] font-almarai">+922 254 548 524</p>
                     </div>
                 </div>
-                <div class="hidden md:flex items-center gap-2  pr-5 border-r border-white social-icons">
-                    <span class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
-                        <i data-lucide="instagram" class="text-white w-[15px] h-[15px]"></i>
-                    </span>
-                    <span class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
-                        <i data-lucide="instagram" class="text-white w-[15px] h-[15px]"></i>
-                    </span>
-                    <span class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
-                        <i data-lucide="instagram" class="text-white w-[15px] h-[15px]"></i>
-                    </span>
-                    <span class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
-                        <i data-lucide="facebook" class="text-white w-[15px] h-[15px]"></i>
-                    </span>
+                <!-- social icons in top -->
+                <div class="hidden lg:flex items-center gap-2  pr-5 border-r border-white">
+                    <a href="#" class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
+                        <img loading="lazy" src="assets/icons/social/snapchat.svg" class="w-[15px] h-[15px]"
+                            alt="snapchat-icon">
+                    </a>
+                    <a href="#" class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
+                        <img loading="lazy" src="assets/icons/social/white-whatsapp-logo.svg" class="w-[15px] h-[15px]"
+                            alt="white-whatsapp-icon">
+                    </a>
+                    <a href="#" class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
+                        <img loading="lazy" src="assets/icons/social/instagram.svg" class="w-[15px] h-[15px]"
+                            alt="instagram-icon">
+                    </a>
+                    <a href="#" class="w-[25px] h-[25px] p-1 rounded-full border border-1 border-white">
+                        <img loading="lazy" src="assets/icons/social/facebook.svg" class="w-[15px] h-[15px]"
+                            alt="facebook-icon">
+                    </a>
                 </div>
 
             </div>
         </section>
         <!-- end banner section for location & social icons -->
-
         <!-- start navbar section -->
         <nav class="w-full z-50 navbar-section">
-            <div class="max-w-7xl mx-auto px-4 md:px-[150px]">
-                <div class="flex items-center justify-between h-[76.5px]">
+            <div class="mx-auto px-4 lg:px-[150px]">
+                <div class="flex items-center justify-between w-full h-[76.5px]">
                     <!-- logo sofrah -->
-                    <div class="logo">
-                        <h1
-                            class="font-winter-bubble font-normal text-[40px] md:text-[50px]  leading-[24.99px] tracking-[0] uppercase">
-                            Sofrah
-                        </h1>
+                    <div class="logo w-[98px] h-[49px] lg:w[153.44px]">
+                        <img loading="lazy" src="assets/puplic/logo.svg" class="w-full" alt="sofrah-logo">
                     </div>
                     <!-- Menu Button (Mobile) -->
-                    <div class="flex items-center w-full justify-between md:hidden">
-
-                        <div class="flex items-center gap-3 ">
-                            <button id="menu-btn" aria-label="menu button" class="text-gray-700 focus:outline-none">
-                                <i data-lucide="menu" class="text-black w-[22px] h-[22px]"></i>
-                            </button>
-                            <div class="flex items-center gap-3">
-                                <button aria-label="account" class="border border-gray-300 border-1 p-2 rounded-full">
-                                    <i data-lucide="user-round" class="text-black w-[20px] h-[20px]"></i>
-                                </button>
-                                <button aria-label="favorite" class="border border-gray-300 border-1 p-2 rounded-full">
-                                    <i data-lucide="heart" class="text-black w-[20px] h-[20px]"></i>
-                                </button>
-                                <button aria-label="search" class="border border-gray-300 border-1 p-2 rounded-full">
-                                    <i data-lucide="search" class="text-black w-[20px] h-[20px]"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <div class="flex items-center space-x-2 justify-between lg:hidden">
+                        <button aria-label="search" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
+                            <img loading="lazy" src="assets/icons/buttons/search.svg" class="w-[20px] h-[20px]"
+                                alt="search-icon">
+                        </button>
+                        <button aria-label="cart" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
+                            <img loading="lazy" src="assets/icons/buttons/shopping-cart.svg" class="w-[20px] h-[20px]"
+                                alt="shopping-cart-icon">
+                        </button>
+                        <button aria-label="account" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
+                            <img loading="lazy" src="assets/icons/buttons/user.svg" class="w-[20px] h-[20px]"
+                                alt="user-icon">
+                        </button>
+                        <button id="menu-btn" aria-label="menu button" class="text-gray-700 focus:outline-none">
+                            <img loading="lazy" src="assets/icons/buttons/menu.svg" class="w-[32px] h-[32px]"
+                                alt="menu-icon">
+                        </button>
                     </div>
                     <!-- Menu Links -->
-                    <div id="menu" class="hidden md:block">
+                    <div id="menu" class="hidden lg:block">
                         <ul class="flex gap-3 items-center nav-list">
                             <li class="nav-item">
-                                <a href="#"
-                                    class="text-[16px] hover:text-[#072F25] cursor-pointer text-almarai">المدونة</a>
+                                <a href="#" class="cursor-pointer 
+                                font-almarai flex items-center gap-1">
+                                    <span class="text-[16px] text-[#072F25]">الرئيسية</span>
+                                    <img loading="lazy" src="assets/icons/arrow/down-arrow.svg" alt="down-arrow-icon"
+                                        class="w-[10px] h-[10px] m-0 p-0">
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer text-almarai">العروض
-                                    والخصومات</a>
+                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
+                                font-almarai">الأطباق
+                                    الرئيسية</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer text-almarai">قائمة
+                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
+                                font-almarai">قائمة
                                     الطعام</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer text-almarai">الأطباق
-                                    الرئيسية</a>
+                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
+                                font-almarai">العروض
+                                    والخصومات</a>
                             </li>
-                            <li class="hover:text-[#072F25] nav-item">
-                                <a href="#" class="text-[16px]  cursor-pointer text-almarai flex items-center gap-1">
-                                    <span>
-                                        <i data-lucide="chevron-down" class="text-black w-[15px] h-[15px]"></i>
-                                    </span>
-                                    <span>الرئيسية</span>
-
-                                </a>
+                            <li class="nav-item">
+                                <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
+                                    font-almarai">المدونة</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="hidden md:flex items-center gap-3">
-                        <button aria-label="account"
-                            class="border border-gray-300 rounded-full w-9 h-9 flex items-center justify-center">
-                            <i data-lucide="user-round" class="text-black w-[20px] h-[20px]"></i>
+                    <!-- social buttons in large screen -->
+                    <div class="hidden lg:flex items-center gap-3">
+                        <button aria-label="search" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
+                            <img loading="lazy" src="assets/icons/buttons/search.svg" class="w-[20px] h-[20px]"
+                                alt="search-icon">
                         </button>
-                        <button aria-label="favorite"
-                            class="border border-gray-300 rounded-full w-9 h-9 flex items-center justify-center">
-                            <i data-lucide="heart" class="text-black w-[20px] h-[20px]"></i>
+                        <button aria-label="cart" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
+                            <img loading="lazy" src="assets/icons/buttons/shopping-cart.svg" class="w-[20px] h-[20px]"
+                                alt="shopping-cart-icon">
                         </button>
-                        <button aria-label="shopping cart"
-                            class="border border-gray-300 rounded-full w-9 h-9 flex items-center justify-center">
-                            <i data-lucide="shopping-cart" class="text-black w-[20px] h-[20px]"></i>
+                        <button aria-label="favorites" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
+                            <img loading="lazy" src="assets/icons/buttons/black-favorite.svg"
+                                class="w-[20px] h-[20px] text-black" alt="black-favorite-icon">
                         </button>
-                        <button aria-label="search"
-                            class="border border-gray-300 rounded-full w-9 h-9 flex items-center justify-center">
-                            <i data-lucide="search" class="text-black w-[20px] h-[20px]"></i>
+                        <button aria-label="account" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
+                            <img loading="lazy" src="assets/icons/buttons/user.svg" class="w-[20px] h-[20px]"
+                                alt="user-icon">
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
-                <ul class="flex flex-col gap-2">
+            <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-md">
+                <ul class="flex flex-col gap-2 px-6 py-4">
                     <li class="nav-item">
-                        <a href="#"
-                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">المدونة</a>
+                        <a href="#" class="cursor-pointer 
+                                                    font-almarai flex items-center gap-1">
+                            <span class="text-[16px] text-[#072F25]">الرئيسية</span>
+                            <img loading="lazy" src="assets/icons/arrow/down-arrow.svg" alt="down-arrow-icon"
+                                class="w-[10px] h-[10px] m-0 p-0">
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#"
-                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">العروض
-                            والخصومات</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#"
-                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">قائمة
-                            الطعام</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#"
-                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">الأطباق
+                        <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
+                                                    font-almarai">الأطباق
                             الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#"
-                            class="block px-4 py-2 text-[16px] hover:bg-[#072F25] hover:text-white transition-all duration-500 cursor-pointer text-almarai nav-link">الرئيسية</a>
+                        <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
+                                                    font-almarai">قائمة
+                            الطعام</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
+                                                    font-almarai">العروض
+                            والخصومات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
+                                                        font-almarai">المدونة</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <!-- end navbar section -->
+    </header>
+    <!-- end hero section -->
 
-        <!-- start Hero section -->
-        <main class="bg-[#F7F2E2] w-full h-[405px] md:h-[790px] py-6 px-1 md:px-16 hero-section">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-5">
+    <!-- start Hero section -->
+    <main>
+        <section class="bg-[#F7F2E2] w-full h-[500px] lg:h-[790px] py-5 px-6 lg:px-15 hero-section">
+            <div class="flex items-center justify-between gap-6 mb-5 realtive">
                 <!-- right side -->
-                <div class="hidden md:block overflow-hidden show-sandwich-container">
-                    <img src="assets/images/tomato.png" alt="tomato"
-                        class=" w-[200px] -rotate-[13.5deg] object-contain" />
+                <div class="hidden lg:block overflow-hidden w-[255px]">
+                    <img loading="lazy" src="assets/puplic/peice-meat.svg" alt="piece-meet" class="absolute top-[25%]">
+                    <img loading="lazy" src="assets/puplic/freah-salad.svg" alt="fresh-salad"
+                        class="absolute top-[15%] left-[87%] -rotate-[7deg] object-contain" />
                 </div>
                 <!-- middle side -->
-                <div class="flex flex-col items-center justify-center max-w-md md:max-w-lg text-center">
-                    <h2 class="font-bold mb-4 text-almarai text-2xl md:text-3xl hidden md:block">
+                <div class="flex flex-col items-center justify-center w-full lg:w-[740px]">
+                    <h2 class="font-bold mb-4 
+                    font-almarai text-[36px] text-center hidden lg:block">
                         نكهاتنا المميزة توصل لسفرتك بكل حب
                     </h2>
-                    <p class="mb-8 text-[14px] md:text-[20px] text-almarai hidden md:block">
+                    <p class="mb-8 text-[20px] 
+                    font-almarai hidden lg:block text-center">
                         استمتع بأشهى الأطباق الطازجة، محضرة بعناية، تجمع بين الوصفات التقليدية والنكهات العصرية
                     </p>
 
-                    <h2 class="font-bold mb-4 text-almarai text-2xl md:text-3xl block md:hidden">
+                    <h2 class="font-bold mb-3 
+                    font-almarai text-[20px] text-center block lg:hidden">
                         مطعمك المفضل ودع النكهات تجيك لحد عندك
                     </h2>
-                    <p class="mb-8 text-[14px] md:text-[20px] text-almarai block md:hidden">
+                    <p class="mb-3 text-[14px] text-center text-[#2F2F2F] 
+                    font-almarai block lg:hidden">
                         استمتع بأطباق طازجة، محضّرة بعناية، تمزج بين الوصفات التقليدية والمذاق العصري
                     </p>
 
                     <button
-                        class="bg-[#EB1400] hover:bg-red-600 text-white font-bold w-[130px] md:w-[174px] h-[40px] md:h-[52px] px-2 rounded-full shadow-lg flex items-center justify-between transition duration-300">
-                        <span>اطلب الآن</span>
-                        <span class="mr-2 bg-white p-1 md:p-2 rounded-full">
-                            <i data-lucide="move-up-left" class="text-red-600 w-5 h-5"></i>
-                        </span>
+                        class="bg-[#EB1400] hover:bg-[#BA0000] transition-all duration-300 text-white font-bold w-[132px] lg:w-[164px] h-[40px] lg:h-[52px] pl-2 pr-2 lg:pr-5 rounded-full shadow-lg flex items-center justify-between transition duration-300 cursor-pointer">
+                        <span class="lg:text-[18px] font-almarai">اطلب الآن</span>
+                        <div class="bg-white w-[35px] lg:w-[40px] h-[35px] lg:h-[40px] rounded-full">
+                            <img loading="lazy" src="assets/icons/arrow/arrow-up.svg" alt="arrow-up-icon"
+                                class="w-full w-full">
+                        </div>
                     </button>
                 </div>
                 <!-- left side -->
-                <div class="hidden md:block relative show-sandwich-container">
-                    <img src="assets/images/fresh-basil-leaves.png" alt="fresh-basil-leaves"
-                        class="absolute left-[10px] -top-[70px] w-[215px] h-[215px] -rotate-[27.87deg] object-contain" />
-                    <img src="assets/images/empty-wood-plate.png" alt="empty-wood-plate.png"
-                        class="absolute -top-[100px] left-[40px] w-[235px] h-[235px] -rotate-[17.85deg] object-contain" />
-                    <img src="assets/images/sandwich-with-meet-cheese.png" alt="sandwich meet with cheese"
-                        class="absolute -top-[65px] left-[62px] w-[175px] h-[175px] -rotate-[2.87deg] object-contain" />
+                <div class="hidden lg:block w-[285px]">
+                    <img loading="lazy" src="assets/puplic/fresh-sandwich.svg" alt="fresh-basil-leaves"
+                        class="object-contain" />
                 </div>
             </div>
-
             <!--  slider hero -->
-            <div class="w-full mx-auto flex flex-col items-center">
-                <div class="relative w-full overflow-hidden">
-                    <!-- Swiper -->
-                    <div class="swiper hero-swiper w-full h-full border border-[#FF9924] border-2 rounded-full">
-                        <div class="swiper-wrapper border border-black border-4 rounded-full">
-                            <div class="swiper-slide">
-                                <img src="/assets/images/slider-1.png" alt="slider-1 image"
-                                    class="rounded-full block object-cover w-full h-[150px] md:h-[460px]" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/assets/images/slider-2.png" alt="slider-1 image"
-                                    class="rounded-full block object-cover w-full  h-[150px] md:h-[460px]" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/assets/images/slider-3.png" alt="slider-1 image"
-                                    class="rounded-full block object-cover w-full  h-[150px] md:h-[460px]" />
-                            </div>
+            <div class="border border-[#FF9924] border-2 rounded-full">
+                <!-- Swiper -->
+                <div class="swiper border-5 border-black rounded-full hero-swiper w-full h-full">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img loading="lazy" src="/assets/slide/slide-1.svg" alt="slider-1 image"
+                                class="rounded-full block object-contain w-full h-full" />
                         </div>
-                        <!-- Navigation buttons -->
-                        <div class="swiper-button-next bg-[#072F25] border border-white rounded-full">
+                        <div class="swiper-slide">
+                            <img loading="lazy" src="/assets/slide/slide-2.svg" alt="slider-2 image"
+                                class="rounded-full block object-contain w-full h-full" />
                         </div>
-                        <div class="swiper-button-prev bg-[#072F25] border border-white rounded-full">
+                        <div class="swiper-slide">
+                            <img loading="lazy" src="/assets/slide/slide-3.svg" alt="slider-3 image"
+                                class="rounded-full block object-contain w-full h-full" />
                         </div>
                     </div>
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-next bg-[#3F9065] border border-white rounded-full">
+                    </div>
+                    <div class="swiper-button-prev bg-[#3F9065] border border-white rounded-full">
+                    </div>
                 </div>
-
             </div>
-
-        </main>
-        <!-- end Hero section -->
-    </header>
+        </section>
+    </main>
+    <!-- end Hero section -->
 
     <!-- start categories section -->
-    <section class="categories-section px-1 md:px-15 py-20 space-y-20">
-        <div class="flex flex-col items-center gap-3 categories-scrtion-title">
+    <section class="categories-section px-5 lg:px-15 py-10 space-y-5 mb-10">
+        <div class="flex flex-col items-center gap-3">
             <h2 class="font-almarai font-bold text-[28px]">استكشف أقسام <span class="text-[#EB1400]">قائمتنا</span></h2>
             <p class="font-almarai font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">من المذاق الشرقي
                 الأصيل إلى النكهات العالمية… في سفرة، كل طبق هو حكاية</p>
-            <div class="relative flex items-center justify-center w-[315px] h-[6px]">
-                <div class="absolute w-[15px] h-[6] bg-[#3F9065] inset-0" style="border-radius: 10px 5px 5px 3px;">
-                </div>
-                <div class="absolute w-full h-[2px] bg-[#3F9065]"></div>
-                <div class="absolute left-4 flex gap-1">
-                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
-                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
-                </div>
-
-                <div class="absolute right-4 flex gap-1">
-                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
-                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
-                </div>
-                <div class="relative w-3 h-3 bg-[#3F9065] rotate-45"></div>
-            </div>
-
-
+            <img loading="lazy" src="assets/icons/golbal/line.svg" alt="line">
         </div>
+        <!--categories Swiper -->
+        <div class="swiper categories-swiper">
+            <div class="swiper-wrapper" id="categories-slices">
+                <!-- Slides -->
 
-        <!-- categories cards -->
-        <!-- Swiper -->
-        <div class="py-10">
-            <div class="max-w-7xl mx-auto">
-                <div class="swiper categories-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Slide -->
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        فطائر
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>23</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/frensh-fries.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-600 group-hover:-rotate-[20deg]" />
-                                <div class="font-almarai transition-all duration-500">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide w-[165px]">
-                            <div class="group w-full max-w-[160px] h-[210px] text-center bg-[#F7F2E2] py-4 px-6 category-card 
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto">
-                                <img src="assets/images/فطائر.png" alt="category-title"
-                                    class="w-[105px] mb-3 object-cover mx-auto transition-all duration-500 group-hover:-rotate-[15deg]" />
-                                <div class="font-almarai transition-all duration-300">
-                                    <h5
-                                        class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                                        معجنات
-                                    </h5>
-                                    <div
-                                        class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                        <p>وجبة متاحة</p>
-                                        <span>15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Navigation buttons -->
-                    <div class="swiper-button-next bg-[#EB1400] border border-white rounded-full">
-                    </div>
-                    <div class="swiper-button-prev bg-[#EB1400] border border-white rounded-full">
-                    </div>
-
-                </div>
             </div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next bg-[#EB1400] border border-white rounded-full">
+            </div>
+            <div class="swiper-button-prev bg-[#EB1400] border border-white rounded-full">
+            </div>
+
         </div>
     </section>
     <!-- end categories section -->
 
-
     <!-- start products section -->
-    <section class="products-section px-1 md:px-15 pb-20 space-y-20">
-        <div class="flex flex-col items-center gap-3 categories-scrtion-title">
-            <h2 class="font-almarai font-bold text-[28px]">تجربة فاخرة بسعر أخف</h2>
-            <p class="font-almarai font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">دلّل نفسك بأشهى
+    <section class="products-section px-5 lg:px-15 pb-10 space-y-5 mb-10">
+        <div class="flex flex-col items-center gap-3 font-almarai">
+            <h2 class="font-bold text-[28px]">تجربة فاخرة بسعر أخف</h2>
+            <p class="font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">دلّل نفسك بأشهى
                 الأطباق المختارة مع خصومات حصرية</p>
-            <div class="relative flex items-center justify-center w-[315px] h-[6px]">
-                <div class="absolute w-[15px] h-[6] bg-[#3F9065] inset-0" style="border-radius: 10px 5px 5px 3px;">
-                </div>
-                <div class="absolute w-full h-[2px] bg-[#3F9065]"></div>
-                <div class="absolute left-4 flex gap-1">
-                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
-                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
-                </div>
-
-                <div class="absolute right-4 flex gap-1">
-                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
-                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
-                </div>
-                <div class="relative w-3 h-3 bg-[#3F9065] rotate-45"></div>
-            </div>
-
-
+            <img loading="lazy" src="assets/icons/golbal/line.svg" alt="line">
         </div>
-
         <!-- start products part -->
-        <div class="grid grid-cols-1 md:grid cols-3 lg:grid-cols-4 gap-6">
-            <div class="product-card group">
-                <div class="relative mb-8 product-card-top">
-                    <p
-                        class="bg-[#EB1400] text-white w-[95px] py-2 text-center  rounded-[27px_8px_8px_0px] absolute top-[10%] left-0">
-                        20% خصم </p>
-                    <div
-                        class="absolute right-[2%] top-[11%] -translate-y-1 space-y-3 pr-5 transform transition-all duration-500 ease-in-out 
-                               opacity-0 invisible translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible">
-                        <button aria-label="favorite"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
-                            <i data-lucide="heart" class="text-[#072F25] w-[18px] h-[18px]"></i>
-                        </button>
-
-                        <button aria-label="details"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
-                            <i data-lucide="eye" class="text-[#072F25] w-[18px] h-[18px]"></i>
-                        </button>
-                    </div>
-                    <div
-                        class="product-image w-full h-[280px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] bg-[#F7F2E2] flex items-center justify-center rounded-[80px]">
-                        <img src="assets/images/product-1.png" alt=""
-                            class="m-auto w-[230px] object-fit group-hover:-rotate-[15deg] duration-900 transition-all">
-                    </div>
-                    <button
-                        class="flex items-center justify-center gap-3 bg-[#FF9924] rounded-full w-[169px] h-[48px] font-almarai absolute -bottom-[7%] left-[22%] group-hover:bg-[#EB1400] group-hover:text-white transition-all duration-500 ease-in-out">
-                        <span>
-                            <i data-lucide="shopping-cart" class="w-[14px] h-[14px] italic"></i>
-                        </span>
-                        <span>إضافة إلي السلة </span>
-                    </button>
-                </div>
-                <div class="product-details text-center space-y-1.5 font-almarai">
-                    <h6 class="font-bold text-[18px]">ساندوتش تركي مدخن </h6>
-                    <p class="text-[14px] text-[#525252]">شرائح تركي مدخن من المخلل وصوص خاص داخل خبر تست محمص شهي</p>
-                    <div class="flex items-center justify-center gap-2">
-                        <p class="text-[#EB1400] font-extrabold">16 رس</p>
-                        <del class="text-[#9D9D9D] text-[16px]"> 24 رس </del>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card group">
-                <div class="relative mb-8 product-card-top">
-                    <p
-                        class="bg-[#EB1400] text-white w-[95px] py-2 text-center  rounded-[27px_8px_8px_0px] absolute top-[10%] left-0">
-                        20% خصم </p>
-                    <div
-                        class="absolute right-[2%] top-[11%] -translate-y-1 space-y-3 pr-5 transform transition-all duration-500 ease-in-out 
-                               opacity-0 invisible translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible">
-                        <button aria-label="favorite"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
-                            <i data-lucide="heart" class="text-[#072F25] w-[18px] h-[18px]"></i>
-                        </button>
-
-                        <button aria-label="details"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
-                            <i data-lucide="eye" class="text-[#072F25] w-[18px] h-[18px]"></i>
-                        </button>
-                    </div>
-                    <div
-                        class="product-image w-full h-[280px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] bg-[#F7F2E2] flex items-center justify-center rounded-[80px]">
-                        <img src="assets/images/product-1.png" alt=""
-                            class="m-auto w-[230px] object-fit group-hover:-rotate-[15deg] duration-900 transition-all">
-                    </div>
-                    <button
-                        class="flex items-center justify-center gap-3 bg-[#FF9924] rounded-full w-[169px] h-[48px] font-almarai absolute -bottom-[7%] left-[22%] group-hover:bg-[#EB1400] group-hover:text-white transition-all duration-500 ease-in-out">
-                        <span>
-                            <i data-lucide="shopping-cart" class="w-[14px] h-[14px] italic"></i>
-                        </span>
-                        <span>إضافة إلي السلة </span>
-                    </button>
-                </div>
-                <div class="product-details text-center space-y-1.5 font-almarai">
-                    <h6 class="font-bold text-[18px]">ساندوتش تركي مدخن </h6>
-                    <p class="text-[14px] text-[#525252]">شرائح تركي مدخن من المخلل وصوص خاص داخل خبر تست محمص شهي</p>
-                    <div class="flex items-center justify-center gap-2">
-                        <p class="text-[#EB1400] font-extrabold">16 رس</p>
-                        <del class="text-[#9D9D9D] text-[16px]"> 24 رس </del>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card group">
-                <div class="relative mb-8 product-card-top">
-                    <p
-                        class="bg-[#EB1400] text-white w-[95px] py-2 text-center  rounded-[27px_8px_8px_0px] absolute top-[10%] left-0">
-                        20% خصم </p>
-                    <div
-                        class="absolute right-[2%] top-[11%] -translate-y-1 space-y-3 pr-5 transform transition-all duration-500 ease-in-out 
-                               opacity-0 invisible translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible">
-                        <button aria-label="favorite"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
-                            <i data-lucide="heart" class="text-[#072F25] w-[18px] h-[18px]"></i>
-                        </button>
-
-                        <button aria-label="details"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
-                            <i data-lucide="eye" class="text-[#072F25] w-[18px] h-[18px]"></i>
-                        </button>
-                    </div>
-                    <div
-                        class="product-image w-full h-[280px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] bg-[#F7F2E2] flex items-center justify-center rounded-[80px]">
-                        <img src="assets/images/product-1.png" alt=""
-                            class="m-auto w-[230px] object-fit group-hover:-rotate-[15deg] duration-900 transition-all">
-                    </div>
-                    <button
-                        class="flex items-center justify-center gap-3 bg-[#FF9924] rounded-full w-[169px] h-[48px] font-almarai absolute -bottom-[7%] left-[22%] group-hover:bg-[#EB1400] group-hover:text-white transition-all duration-500 ease-in-out">
-                        <span>
-                            <i data-lucide="shopping-cart" class="w-[14px] h-[14px] italic"></i>
-                        </span>
-                        <span>إضافة إلي السلة </span>
-                    </button>
-                </div>
-                <div class="product-details text-center space-y-1.5 font-almarai">
-                    <h6 class="font-bold text-[18px]">ساندوتش تركي مدخن </h6>
-                    <p class="text-[14px] text-[#525252]">شرائح تركي مدخن من المخلل وصوص خاص داخل خبر تست محمص شهي</p>
-                    <div class="flex items-center justify-center gap-2">
-                        <p class="text-[#EB1400] font-extrabold">16 رس</p>
-                        <del class="text-[#9D9D9D] text-[16px]"> 24 رس </del>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card group">
-                <div class="relative mb-8 product-card-top">
-                    <p
-                        class="bg-[#EB1400] text-white w-[95px] py-2 text-center  rounded-[27px_8px_8px_0px] absolute top-[10%] left-0">
-                        20% خصم </p>
-                    <div
-                        class="absolute right-[2%] top-[11%] -translate-y-1 space-y-3 pr-5 transform transition-all duration-500 ease-in-out 
-                               opacity-0 invisible translate-x-5 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible">
-                        <button aria-label="favorite"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
-                            <i data-lucide="heart" class="text-[#072F25] w-[18px] h-[18px]"></i>
-                        </button>
-
-                        <button aria-label="details"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md transition-all duration-300">
-                            <i data-lucide="eye" class="text-[#072F25] w-[18px] h-[18px]"></i>
-                        </button>
-                    </div>
-                    <div
-                        class="product-image w-full h-[280px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] bg-[#F7F2E2] flex items-center justify-center rounded-[80px]">
-                        <img src="assets/images/product-1.png" alt=""
-                            class="m-auto w-[230px] object-fit group-hover:-rotate-[15deg] duration-900 transition-all">
-                    </div>
-                    <button
-                        class="flex items-center justify-center gap-3 bg-[#FF9924] rounded-full w-[169px] h-[48px] font-almarai absolute -bottom-[7%] left-[22%] group-hover:bg-[#EB1400] group-hover:text-white transition-all duration-500 ease-in-out">
-                        <span>
-                            <i data-lucide="shopping-cart" class="w-[14px] h-[14px] italic"></i>
-                        </span>
-                        <span>إضافة إلي السلة </span>
-                    </button>
-                </div>
-                <div class="product-details text-center space-y-1.5 font-almarai">
-                    <h6 class="font-bold text-[18px]">ساندوتش تركي مدخن </h6>
-                    <p class="text-[14px] text-[#525252]">شرائح تركي مدخن من المخلل وصوص خاص داخل خبر تست محمص شهي</p>
-                    <div class="flex items-center justify-center gap-2">
-                        <p class="text-[#EB1400] font-extrabold">16 رس</p>
-                        <del class="text-[#9D9D9D] text-[16px]"> 24 رس </del>
-                    </div>
-                </div>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 space-y-2 lg:space-y-0"
+            id="products-container">
 
         </div>
     </section>
     <!-- end products section -->
 
     <!-- start testmonials section -->
-    <section class="reviews px-1 md:px-10 py-20 space-y-20">
-        <div class="flex flex-col items-center gap-3 categories-scrtion-title">
+    <section class="testmonials-section px-5 lg:px-10 py-10 space-y-5">
+        <div class="flex flex-col items-center gap-3">
             <h2 class="font-almarai font-bold text-[28px]">قالوا عن سفرة</h2>
             <p class="font-almarai font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">آراء عملائنا تثبت
                 تميزنا، وكل تجربة معهم تزيدنا فخر</p>
-            <div class="relative flex items-center justify-center w-[315px] h-[6px]">
-                <div class="absolute w-[15px] h-[6] bg-[#3F9065] inset-0" style="border-radius: 10px 5px 5px 3px;">
-                </div>
-                <div class="absolute w-full h-[2px] bg-[#3F9065]"></div>
-                <div class="absolute left-4 flex gap-1">
-                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
-                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
+            <img src="assets/icons/golbal/line.svg" alt="line">
+        </div>
+
+
+        <!-- start testmonials part -->
+        <div
+            class=" bg-[#FF9924] w-full z-10 h-[466px] lg:h-[470px] rounded-[110px] pb-[30px] lg:pb-0 px-6 pt-6  lg:p-6 relative">
+            <div class="flex items-center justify-between flex-col lg:flex-row">
+                <!-- customers images -->
+                <div class="relative w-full h-[170px] lg:h-[336px]">
+                    <img loading="lazy" src="assets/images/customers/man-customer-3.svg" alt="man-customer-3"
+                        class="absolute left-[75%] lg:right-[55%] top-[6%] lg:top-[10%] w-13 lg:w-20 h-13 lg:h-20 rounded-full object-contain border-4 border-white shadow-md cursor-pointer" ">
+                    <img loading=" lazy" src="assets/images/customers/woman-customer-1.svg" alt="woman-customer-1"
+                        class="absolute right-[38%]  lg:right-[5%] -top-[3%] lg:top-[25%] w-13 lg:w-20 h-13 lg:h-20 rounded-full object-contain border-4 border-white shadow-md cursor-pointer">
+                    <div class=" relative w-1/2 h-full flex items-center justify-center">
+                        <div class="active-review-container w-16 lg:w-28 h-16 lg:h-28 relative">
+                            <img loading="lazy" src="assets/images/customers/man-customer-1.svg" alt="man-customer-1"
+                                class="absolute right-[85%] lg:right-[171%] -top-[6%] lg:top-[35%]  rounded-full object-contain border-4 border-white shadow-xl cursor-pointer active-review-image">
+                        </div>
+                    </div>
+                    <img loading="lazy" src="assets/images/customers/woman-customer-2.svg" alt="woman-customer-2"
+                        class="absolute right-[80%] lg:right-[25%] top-[56%] lg:top-[40%] w-13 h-13 rounded-full object-contain border-4 border-white shadow-md cursor-pointer z-10">
+
+                    <img loading="lazy" src="assets/images/customers/woman-customer-3.svg" alt="woman-customer-2"
+                        class="absolute right-[70%] lg:right-[40%] top-[13%] lg:top-[65%] w-12 h-12 rounded-full object-contain border-4 border-white shadow-sm cursor-pointer">
+
+                    <img loading="lazy" src="assets/images/customers/man-customer-2.svg" alt="man-customer-2"
+                        class="absolute right-[1-%] top-[55%] w-13 lg:w-20 h-13 lg:h-20 rounded-full object-contain border-4 border-white shadow-sm cursor-pointer">
                 </div>
 
-                <div class="absolute right-4 flex gap-1">
-                    <div class="w-1 h-1 bg-[#3F9065] rounded-full"></div>
-                    <div class="w-1.5 h-1.5 bg-[#3F9065] rounded-full"></div>
-                </div>
-                <div class="relative w-3 h-3 bg-[#3F9065] rotate-45"></div>
-            </div>
-        </div>
-        <!-- start testmonials -->
-        <div class="bg-[#FF9924] w-full h-full rounded-full flex items-start justify-around p-5">
-            <div class="customers">
-                <div class="relative w-full h-full">
-                    <img src="assets/images/customer-1.jpg" alt="Customer 1"
-                        class="absolute top-16 left-1/3 w-20 h-20 rounded-full object-cover border-4 border-white shadow-md cursor-pointer">
-                    <img src="assets/images/customer-2.jpg" alt="Customer 2"
-                        class="absolute top-1/2 left-1/4 w-28 h-28 rounded-full object-cover border-4 border-white shadow-xl cursor-pointer">
-                    <img src="assets/images/customer-3.jpg" alt="Customer 3"
-                        class="absolute top-1/4 right-0 w-24 h-24 rounded-full object-cover border-4 border-white shadow-md cursor-pointer">
-                    <img src="assets/images/customer-4.jpg" alt="Customer 4"
-                        class="absolute bottom-16 right-8 w-16 h-16 rounded-full object-cover border-4 border-white shadow-sm cursor-pointer">
-                    <img src="assets/images/customer-5.jpg" alt="Customer 5"
-                        class="absolute bottom-4 left-1/4 w-20 h-20 rounded-full object-cover border-4 border-white shadow-sm cursor-pointer">
-                </div>
-            </div>
-            <div class="bg-white">
-                <div class="felx">
-                    <p class="text-end text-[100px]"> ,, </p>
-                    <div class="flex bg-white text-[#FF9924]">
-                        <span><i data-lucide="star" class="w-[18px]"></i></span>
-                        <span><i data-lucide="star" class="w-[18px]"></i></span>
-                        <span><i data-lucide="star" class="w-[18px]"></i></span>
-                        <span><i data-lucide="star" class="w-[18px]"></i></span>
+                <!-- csutomer review & testmonial -->
+                <div
+                    class="bg-white w-full h-[252px] lg:h-[398px] mx-auto rounded-[100px] lg:rounded-[160px] shadow-lg pt-5 lg:pt-20 px-12  lg:px-20 pb-5 font-almarai">
+                    <div class="flex items-center justify-between mb-5 lg:mb-10">
+                        <div class="stars flex items-center justify-center gap-1 bg-[#FF9924] py-1 px-2 rounded-full">
+                            <span>
+                                <i data-lucide="star" class="w-[12px] lg:w-[16px] text-white text-bold"></i>
+                            </span>
+                            <span>
+                                <i data-lucide="star" class="w-[12px] lg:w-[16px] text-white text-bold"></i>
+                            </span>
+                            <span>
+                                <i data-lucide="star" class="w-[12px] lg:w-[16px] text-white text-bold"></i>
+                            </span>
+                            <span>
+                                <i data-lucide="star" class="w-[12px] lg:w-[16px] text-white text-bold"></i>
+                            </span>
+                            <span>
+                                <i data-lucide="star" class="w-[12px] lg:w-[16px] text-white text-bold"></i>
+                            </span>
+                        </div>
+                        <img src="assets/puplic/comma.svg" alt="comma-image"
+                            class="w-[30px] lg:w-[63px] h-[30px] lg:h-[63px]">
+                    </div>
+                    <div
+                        class="font-almarai font-light leading-relaxed mb-5 text-[12px] lg:text-[18px] customer-review">
+                        <p class="text-[#323232]">
+                            طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد… بالعكس، وصل بدري وحار كأني آكل داخل المطعم.
+                            البرجر
+                            خطير، اللحم عصاري
+                            والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمّون بأدق التفاصيل
+                        </p>
+                    </div>
+                    <div class="mt-0 lg:mt-5 lg:pb-8 customer-name">
+                        <h4 class="text-[#191919] font-bold text-[14px] lg:text-[20px]">فهد سالم </h4>
+                        <p class="text-[#747474] text-[12px]">مدير فني</p>
                     </div>
                 </div>
+                <img src="assets/puplic/packet-phrise.svg" alt="packet-phrise-image"
+                    class="absolute bottom-[3%] left-[5%] lg:bottom-[13%] lg:-left-[1%] w-[80px] lg:w-[105px] object-cover"
+                    loading="lazy">
             </div>
         </div>
+
     </section>
     <!-- end testmonials section -->
 
     <!-- start footer section -->
-    <footer class="bg-[#072F25] px-1 md:px-10 w-full pt-20 pb-5 relative overflow-hidden">
-        <img src="assets/images/pizaa.png" alt="pizza image"
-            class="w-[185px] absolute bottom-[82%] left-[45%] object-cover">
-        <div class="flex items-center w-full justify-center gap-7">
-            <div class="h-[1px] w-[471px] bg-[#A1A1A1]"></div>
-            <div class="logo">
-                <h1
-                    class="font-winter-bubble font-normal text-[40px] md:text-[50px]  leading-[24.99px] tracking-[0] uppercase text-white">
-                    Sofrah
-                </h1>
-            </div>
-            <div class="h-[1px] w-[471px] bg-[#A1A1A1]"></div>
+    <footer
+        class="bg-[#072F25] px-1 lg:px-10 w-full pb-5 lg:block flex flex-col items-center justify-center font-almarai">
+        <div class=" flex items-center justify-center mb-3">
+            <img loading="lazy"
+                src="assets/puplic/pizza-ingredients-circle-tomatoes-basil-olives-spices-delicious-pepperoni-pizza.svg"
+                alt="pizza image" class="w-[185px] object-contain">
         </div>
-        <div class="flex flex-col md:flex-row flex-wrap items-center md:items-start justify-between gap-5 mt-5 md:mt-8">
-            <div class="my-account">
-                <h5 class="text-[20px] mb-3 text-white">حسابي</h5>
-                <ul class="space-y-3 text-white font-almarai">
+        <div class="flex items-center w-full justify-center gap-7">
+            <div class="h-[1px] w-full bg-[#A1A1A1]"></div>
+            <div class="logo">
+                <img src="assets/puplic/logo.svg" alt="logo" loading="lazy" class="w-[450px]">
+            </div>
+            <div class="h-[1px] w-full bg-[#A1A1A1]"></div>
+        </div>
+        <div
+            class="flex flex-col lg:flex-row flex-wrap items-center lg:items-start justify-between gap-5 space-y-4 mt-5">
+            <div class="my-account flex flex-col items-center justify-center">
+                <h5 class="text-[20px] font-bold mb-3 text-white">حسابي</h5>
+                <ul class="space-y-3 text-white flex flex-col items-center justify-center font-almarai">
                     <li class="list-item">
                         <a href="#" class="text-white">حسابى</a>
                     </li>
@@ -783,9 +439,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="links">
-                <h5 class="text-[20px] mb-3 text-white">روابط مهمة</h5>
-                <ul class="space-y-3 text-white font-almarai">
+            <div class="links flex flex-col items-center justify-center">
+                <h5 class="text-[20px] mb-3 text-white font-bold">روابط مهمة</h5>
+                <ul class="space-y-3 text-white flex flex-col items-center justify-center font-almarai">
                     <li class="list-item">
                         <a href="#" class="text-white">سياسة الخصوصية</a>
                     </li>
@@ -800,62 +456,72 @@
                     </li>
                 </ul>
             </div>
-            <div class="connect">
-                <h5 class="text-[20px] mb-3 text-white">تواصل معنا</h5>
-                <ul class="space-y-3 text-white font-almarai">
+            <div class="connect flex flex-col items-center justify-center">
+                <h5 class="text-[20px] mb-3 text-white font-bold">تواصل معنا</h5>
+                <ul class="space-y-3 text-white flex flex-col items-center justify-center font-almarai">
                     <li class="flex items-center justify-start gap-2">
-                        <img src="assets/icons/mobile.svg" alt="mobile" class="w-[20px] h-[20px] object-contain" />
+                        <img loading="lazy" src="assets/icons/social/mobile.svg" alt="mobile"
+                            class="w-[20px] h-[20px] object-contain" />
                         <span>009612345678932</span>
                     </li>
 
                     <li class="flex items-center justify-start gap-2">
-                        <img src="assets/icons/call.svg" alt="call" class="w-[20px] h-[20px] object-contain" />
+                        <img loading="lazy" src="assets/icons/social/call.svg" alt="call"
+                            class="w-[20px] h-[20px] object-contain" />
                         <span>009612345678932</span>
                     </li>
 
                     <li class="flex items-center justify-start gap-2">
-                        <img src="assets/icons/mail.svg" alt="mail" class="w-[20px] h-[20px] object-contain" />
+                        <img loading="lazy" src="assets/icons/social/mail.svg" alt="mail"
+                            class="w-[20px] h-[20px] object-contain" />
                         <span>https://salla.sa</span>
                     </li>
                 </ul>
-
-
             </div>
-            <div class="follow">
-                <h5 class="text-[20px] mb-3 text-white">تابعنا</h5>
+            <div class="follow flex flex-col items-center justify-center">
+                <h5 class="text-[20px] mb-3 text-white font-bold">تابعنا</h5>
                 <div class="flex items-center gap-3">
-                    <button class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
-                        <img src="assets/icons/facebook.svg" alt="facebook" class="w-full h-full object-contain">
-                    </button>
-                    <button class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
-                        <img src="assets/icons/snapchat.svg" alt="snapchat" class="w-full h-full object-contain">
-                    </button>
-                    <button class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
-                        <img src="assets/icons/twitter.svg" alt="twitter" class="w-full h-full object-contain">
-                    </button>
-                    <button class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
-                        <img src="assets/icons/instgram.svg" alt="instgram" class="w-full h-full object-contain">
-                    </button>
+                    <a href="" # class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
+                        <img loading="lazy" src="assets/icons/social/instagram.svg" alt="instgram"
+                            class="w-full h-full object-contain">
+                    </a>
+                    <a href="" # class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
+                        <img loading="lazy" src="assets/icons/social/twitter.svg" alt="twitter"
+                            class="w-full h-full object-contain">
+                    </a>
+                    <a href="" # class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
+                        <img loading="lazy" src="assets/icons/social/snapchat.svg" alt="snapchat"
+                            class="w-full h-full object-contain">
+                    </a>
+                    <a href="" # class="w-[36px] h-[36px] border-[0.5px] border-[#3F9065] rounded p-2">
+                        <img loading="lazy" src="assets/icons/social/facebook.svg" alt="facebook"
+                            class="w-full h-full object-contain">
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="border-t pt-2 mt-10 border-[#A1A1A1] grid grid-cols-1 md:grid-cols-3 items-center">
+        <div
+            class="border-t pt-2 mt-10 border-[#A1A1A1] flex flex-col lg:flex-row gap-4 items-center justify-center lg:justify-between w-full">
             <div class="flex items-center gap-1">
-                <img src="assets/images/ضريبة-قيمة-مضافة.svg" alt="ضريبة القيمة المضافة" class="w-[20px]">
-                <p class="text-white">يبريضلا مكرا: 546987552</p>
+                <img loading="lazy" src="assets/puplic/VAT.svg" alt="ضريبة القيمة المضافة" class="w-[20px]">
+                <p class="text-white">الرقم الضريبي: 546987552</p>
             </div>
-            <div class="text-center">
-                <p class="text-white">جميع الحقوق محفوظة</p>
+            <div class="text-center hidden lg:block">
+                <p class="text-white text-[14px]">جميع الحقوق محفوظة</p>
             </div>
-            <div class="payment-methods flex items-center justify-end gap-3">
-                <img src="assets/images/visa.svg" alt="visa" class="w-[40px] bg-white h-[22px]">
-                <img src="assets/images/mastercard.svg" alt="master card" class="w-[40px] bg-white h-[22px]">
-                <img src="assets/images/paypal.svg" alt="paypal" class="w-[40px] bg-white h-[22px]">
-                <img src="assets/images/mada.svg" alt="mada" class="w-[40px] bg-white h-[22px]">
+            <!-- 8 -->
+            <div class="payment-methods flex items-center justify-end gap-[5px]">
+                <img loading="lazy" src="assets/icons/payment/visa.svg" alt="visa" class="w-[40px] bg-white h-[22px]">
+                <img loading="lazy" src="assets/icons/payment/mastercard.svg" alt="master card"
+                    class="w-[40px] bg-white h-[22px]">
+                <img loading="lazy" src="assets/icons/payment/paypal.svg" alt="paypal"
+                    class="w-[40px] bg-white h-[22px]">
+                <img loading="lazy" src="assets/icons/payment/mada.svg" alt="mada" class="w-[40px] bg-white h-[22px]">
             </div>
         </div>
     </footer>
     <!-- end footer section -->
+
     <!-- start  scripts  -->
     <!-- initial lucide icons -->
     <script>
