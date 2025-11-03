@@ -84,25 +84,66 @@ const reviews = [
     customerName: "فهد سالم",
     customerPosition: "مدير فني",
     customerReview:
-      "طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد...بالعكس، وصل بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.",
+      "طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد... بالعكس، وصل بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.",
   },
   {
-    id: 1,
+    id: 2,
     customerName: "محمود حربي",
     customerPosition: "مدير مالي",
     customerReview:
-      "طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد...بالعكس، وصل بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.",
+      "طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد... بالعكس، وصل بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.",
+  },
+  {
+    id: 3,
+    customerName: "سعود العنزي",
+    customerPosition: "محلل نظم",
+    customerReview:
+      "طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد... بالعكس، وصل بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.",
+  },
+  {
+    id: 10,
+    customerName: "سارة عبدالعزيز",
+    customerPosition: "مصممة جرافيك",
+    customerReview:
+      "طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد... بالعكس، وصل بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.",
+  },
+  {
+    id: 20,
+    customerName: "رهف المطيري",
+    customerPosition: "مديرة تسويق",
+    customerReview:
+      "طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد... بالعكس، وصل بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.",
+  },
+  {
+    id: 30,
+    customerName: "نوف الحربي",
+    customerPosition: "طالبة جامعية",
+    customerReview:
+      "طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد... بالعكس، وصل بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.",
   },
 ];
-// variables
-const menuBtn = document.getElementById("menu-btn");
-const mobileMenu = document.getElementById("mobile-menu");
 
-// Add Event Listener to button for mobile menu
-menuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+document.addEventListener("DOMContentLoaded", () => {
+  lucide.createIcons();
+  // variables
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  // Add Event Listener to button for mobile menu
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  const categoriesSlices = document.getElementById("categories-slices");
+  const productsContainer = document.getElementById("products-container");
+  food.map((product) => {
+    productsContainer.innerHTML += createProductCard(product);
+  });
+  categories.map(
+    (category) => (categoriesSlices.innerHTML += createCategorySlider(category))
+  );
 });
 
+// initial swiper slider
 const heroSwiper = new Swiper(".hero-swiper", {
   effect: "fade",
   fadeEffect: {
@@ -121,8 +162,7 @@ const heroSwiper = new Swiper(".hero-swiper", {
 });
 var categoriesSwiper = new Swiper(".categories-swiper", {
   slidesPerView: 1.5,
-  spaceBetween: 22,
-  loop: true,
+  spaceBetween: 10,
   speed: 700,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -130,31 +170,12 @@ var categoriesSwiper = new Swiper(".categories-swiper", {
   },
   breakpoints: {
     640: {
-      slidesPerView: 1,
-    },
-    1024: {
       slidesPerView: 3,
     },
-    1280: {
+    1024: {
       slidesPerView: 5,
     },
   },
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const categoriesSlices = document.getElementById("categories-slices");
-  const productsContainer = document.getElementById("products-container");
-  food.map((product) => {
-    productsContainer.innerHTML += createProductCard(product);
-  });
-  categories.map(
-    (category) =>
-      (categoriesSlices.innerHTML += createCategorySlider(category))
-  );
-
-  function changeReview(id) {
-    console.log(id);
-  }
 });
 // fuction for create product card
 function createProductCard(product) {
@@ -217,11 +238,12 @@ function createProductCard(product) {
 }
 
 function createCategorySlider(category) {
+  lucide.createIcons();
   const categorySlider = `
        <div class="swiper-slide">
                     <div
-                        class="group w-full text-center bg-[#F7F2E2] py-4 px-10 category-card
-                       transition-all duration-500 ease-in-out hover:bg-[#072F25] rounded-xl mx-auto rounded-t-[100px]">
+                        class="group w-full text-center bg-[#F7F2E2] py-4 px-5 category-card
+                       transition-all duration-500 ease-in-out hover:bg-[#3F9065] rounded-xl mx-auto rounded-t-[100px]">
                         <img loading="lazy" src=${category.image}
                             alt=${category.title}
                             class="w-[100px] h-[100px] mb-3 object-contain mx-auto transition-all duration-500 group-hover:-rotate-[12.45deg]" />
@@ -242,8 +264,5 @@ function createCategorySlider(category) {
                     </div>
                 </div>
   `;
-  return categorySlider
+  return categorySlider;
 }
-
-
-
