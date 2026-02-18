@@ -16,453 +16,465 @@
     <!-- Almarai font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="preload">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- custom css for tailwind -->
     <style type="text/tailwindcss">
-        @layer utilities {
-        .font-almarai {
-          font-family: "Almarai", sans-serif;
+        @theme {
+            --font-almarai: "Almarai", sans-serif;
+            --color-primary: #072f25;
+            --color-danger: #EB1400;
+            --color-dark-danger: #BA0000;
+            --color-accent: #3F9065;
+            --color-dark-warning: #FF9924;
+            --color-light-warning: #F1C40F;
+            --color-light: #f7f2e2;
+            --color-custom-gray: #c8c8c8;
+           --color-dark-gray: #2F2F2F;
+           --color-light-gray: #636363;
+           --color-meduin-gray: #9D9D9D;
+           --color-lighter-gray:#B9B9B9
         }
+        
+        body {
+            font-family: var(--font-almarai);  
       }
     </style>
     <title>SOFRAH</title>
 </head>
 
-<body>
-    <!-- start header section -->
-    <header class="header-section">
-        <!-- start banner section for location & social icons -->
+<body style="font-family:'Almarai',sans-serif">
+    <!-- header section (Banner & Navbar) -->
+    <header class="header-section w-full">
+        <!-- banner section -->
         <section
-            class="flex flex-col md:flex-row md:items-center md:justify-between w-full py-2 bg-[#072F25] px-7 md:px-10 lg:px-[200px] banner-section">
-
-            <div class="flex items-center justify-between w-full md:w-auto md:justify-start md:gap-2">
-                <!-- location -->
-                <div class="flex items-center gap-[3px]">
-                    <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/golbal/location.svg"
-                        class="w-[15px] h-[15px]" alt="location-icon" />
-                    <p class="m-0 p-0 text-white text-[11px] md:text-[14px] font-almarai">
-                        السعودية، الرياض
-                    </p>
+            class="w-full h-[40px] bg-primary px-2 md:px-4 lg:px-8 xl:px-[200px] flex items-center justify-between banner-section">
+            <div class="flex items-center justify-between gap-3 w-full lg:w-auto">
+                <div class="flex items-center justify-center gap-1 md:gap-2">
+                    <img src="assets/icons/golbal/location.svg" class="w-3.5 h-3.5" alt="location">
+                    <p class="text-white text-[11px] md:text-sm font-almarai">السعودية، الرياض</p>
                 </div>
-                <!-- line -->
-                <div class="hidden lg:block w-[2px] h-[20px] bg-white"></div>
-                <!-- email -->
-                <div class="hidden lg:flex items-center gap-[3px]">
-                    <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/social/out-mail.svg"
-                        class="w-[15px] h-[15px]" alt="out-mail-icon" />
-                    <p class="text-white text-[14px] font-almarai">info@sofrah.com</p>
+                <div class="hidden md:block w-px h-4 bg-lighter-gray"></div>
+                <div class="hidden md:flex items-center justify-center gap-1 md:gap-2">
+                    <img src="assets/icons/golbal/email.svg" class="w-[16px] h-[16px]" alt="time">
+                    <p class="text-white text-[10px] md:text-sm font-almarai">info@sofrah.com</p>
                 </div>
-                <!-- line -->
-                <div class="w-[2px] h-[20px] bg-white"></div>
-                <!-- work time -->
-                <div class="flex items-center gap-[3px]">
-                    <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/golbal/time.svg"
-                        class="w-[15px] h-[15px]" alt="time-icon" />
-                    <p class="m-0 p-0 text-white text-[11px] md:text-[14px] font-almarai">
-                        مواقيت العمل من 9 صباحاً إلي 10 مساء
+                <div class="w-px h-4 bg-lighter-gray"></div>
+                <div class="flex items-center justify-center gap-1 md:gap-2">
+                    <img src="assets/icons/golbal/time.svg" class="w-[16px] h-[16px]" alt="time">
+                    <p class="text-white text-[10px] md:text-sm font-almarai">مفتوح في مواقيت العمل: 9 صباحا الي 10 مساء
                     </p>
                 </div>
             </div>
-
-            <div class="hidden md:flex items-center gap-[10px]">
-                <!-- mobile number -->
-                <div class="flex items-center gap-[3px]">
-                    <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/social/call-calling.svg"
-                        class="w-[15px] h-[15px]" alt="phone-icon" />
-                    <p class="text-white text-[14px] font-almarai">
-                        +922 254 548 524
-                    </p>
+            <!-- buttons (mobile & snapchat & whatsapp & intagram )
+                (hidden in small (375) & showm in large screen)
+            -->
+            <div class="hidden lg:flex items-center gap-4">
+                <div class="flex items-center gap-1">
+                    <img src="assets/icons/social/call-calling.svg" class="w-4 h-4" alt="phone">
+                    <p class="text-white text-sm font-almarai">+922 254 548 524</p>
                 </div>
-                <div class="w-[2px] h-[20px] bg-white"></div>
-
-                <!-- social icons -->
+                <div class="w-px h-4 bg-white/30"></div>
                 <div class="flex items-center gap-2">
-                    <a href="#" aria-label="حساب سناب شات"
-                        class="w-6 h-6 p-1 rounded-full border border-white flex items-center justify-center">
-                        <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/social/snapchat.svg"
-                            alt="أيقونة سناب شات" class="w-4 h-4" />
+                    <a href="#"
+                        class="w-6 h-6 rounded-full border border-white/50 flex items-center justify-center hover:bg-white/10 transition-all">
+                        <img src="assets/icons/social/snapchat.svg" alt="snapchat" class="w-3 h-3">
                     </a>
-                    <a href="#" aria-label="واتساب"
-                        class="w-6 h-6 p-1 rounded-full border border-white flex items-center justify-center">
-                        <img loading="lazy" decoding="async" fetchpriority="low"
-                            src="assets/icons/social/white-whatsapp-logo.svg" alt="أيقونة واتساب" class="w-4 h-4" />
+                    <a href="#"
+                        class="w-6 h-6 rounded-full border border-white/50 flex items-center justify-center hover:bg-white/10 transition-all">
+                        <img src="assets/icons/social/white-whatsapp-logo.svg" alt="whatsapp" class="w-3 h-3">
                     </a>
-                    <a href="#" aria-label="انستجرام"
-                        class="w-6 h-6 p-1 rounded-full border border-white flex items-center justify-center">
-                        <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/social/instagram.svg"
-                            alt="أيقونة إنستجرام" class="w-4 h-4" />
+                    <a href="#"
+                        class="w-6 h-6 rounded-full border border-white/50 flex items-center justify-center hover:bg-white/10 transition-all">
+                        <img src="assets/icons/social/instagram.svg" alt="instagram" class="w-3 h-3">
                     </a>
-                    <a href="#" aria-label="فيسبوك"
-                        class="w-6 h-6 p-1 rounded-full border border-white flex items-center justify-center">
-                        <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/social/facebook.svg"
-                            alt="أيقونة فيسبوك" class="w-4 h-4" />
+                    <a href="#"
+                        class="w-6 h-6 rounded-full border border-white/50 flex items-center justify-center hover:bg-white/10 transition-all">
+                        <img src="assets/icons/social/facebook.svg" alt="facebook" class="w-3 h-3">
                     </a>
                 </div>
             </div>
         </section>
-        <!-- end banner section for location & social icons -->
-        <!-- start navbar section -->
-        <nav class="w-full z-50 navbar-section" id="navbar" role="navigation">
-            <div class="mx-auto px-5 md:px-10 lg:px-[200px]">
-                <div class="flex items-center justify-between w-full h-[76.5px]">
-                    <!-- logo sofrah -->
-                    <div class="logo w-[98px] h-[49px] md:w[153.44px]">
-                        <img loading="lazy" decoding="async" fetchpriority="low" src="assets/puplic/logo.svg"
-                            class="w-full" alt="sofrah-logo">
+        <!-- Navbar section -->
+        <nav class="w-full bg-white py-[12px] px-2 md:px-4 lg:px-8 xl:px-[200px] shadow-sm z-50 sticky top-0"
+            id="navbar">
+            <div class="realtive">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="logo w-[98px] lg:w-[130px]">
+                        <img src="assets/puplic/logo.svg" class="w-full object-contain" alt="sofrah-logo">
                     </div>
-                    <!-- Menu Button (Mobile) -->
-                    <div class="flex items-center space-x-2 justify-between lg:hidden">
-                        <button aria-label="search" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
-                            <img loading="lazy" decoding="async" fetchpriority="low"
-                                src="assets/icons/buttons/search.svg" class="w-[20px] h-[20px]" alt="search-icon">
-                        </button>
-                        <button aria-label="cart" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
-                            <img loading="lazy" decoding="async" fetchpriority="low"
-                                src="assets/icons/buttons/shopping-cart.svg" class="w-[20px] h-[20px]"
-                                alt="shopping-cart-icon">
-                        </button>
-                        <button aria-label="account" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
-                            <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/buttons/user.svg"
-                                class="w-[20px] h-[20px]" alt="user-icon">
-                        </button>
-                        <button id="menu-btn" aria-label="menu button" class="text-gray-700 focus:outline-none">
-                            <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/buttons/menu.svg"
-                                class="w-[32px] h-[32px]" alt="menu-icon">
-                        </button>
-                    </div>
-                    <!-- Menu Links -->
-                    <div id="menu" class="hidden lg:block">
-                        <ul class="flex md:gap-2 lg:gap-3 items-center nav-list">
-                            <li class="nav-item">
-                                <a href="#" class="cursor-pointer 
-                                font-almarai flex items-center gap-1">
-                                    <span class="md:text-[14px] lg:text-[16px] text-[#072F25]">الرئيسية</span>
-                                    <img loading="lazy" decoding="async" fetchpriority="low"
-                                        src="assets/icons/arrow/down-arrow.svg" alt="down-arrow-icon"
-                                        class="w-[10px] h-[10px] m-0 p-0">
-                                </a>
+                    <!-- Links in Mobile -->
+                    <div class="hidden md:block">
+                        <ul class="flex items-center gap-3 lg:gap-6 xl:gap-8 font-almarai">
+                            <li><a href="#" class="text-primary font-bold flex items-center gap-1">الرئيسية <img
+                                        src="assets/icons/arrow/down-arrow.svg" class="w-2" alt="down arrow"></a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="md:text-[14px] lg:text-[16px] hover:text-[#072F25] cursor-pointer 
-                                font-almarai">الأطباق
-                                    الرئيسية</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="md:text-[14px] lg:text-[16px]     hover:text-[#072F25] cursor-pointer 
-                                font-almarai">قائمة
+                            <li><a href="#" class="text-gray-700 hover:text-primary transition-colors">الأطباق
+                                    الرئيسية</a></li>
+                            <li><a href="#" class="text-gray-700 hover:text-primary transition-colors">قائمة
                                     الطعام</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="md:text-[14px] lg:text-[16px]     hover:text-[#072F25] cursor-pointer 
-                                font-almarai">العروض
-                                    والخصومات</a>
+                            <li><a href="#" class="text-gray-700 hover:text-primary transition-colors">العروض</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="md:text-[14px] lg:text-[16px]     hover:text-[#072F25] cursor-pointer 
-                                    font-almarai">المدونة</a>
+                            <li><a href="#" class="text-gray-700 hover:text-primary transition-colors">المدونة</a>
                             </li>
                         </ul>
                     </div>
-                    <!-- social buttons in large screen -->
-                    <div class="hidden lg:flex items-center gap-3">
-                        <button aria-label="search" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
-                            <img loading="lazy" decoding="async" fetchpriority="low"
-                                src="assets/icons/buttons/search.svg" class="w-[20px] h-[20px]" alt="search-icon">
-                        </button>
-                        <button aria-label="cart" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
-                            <img loading="lazy" decoding="async" fetchpriority="low"
-                                src="assets/icons/buttons/shopping-cart.svg" class="w-[20px] h-[20px]"
-                                alt="shopping-cart-icon">
-                        </button>
-                        <button aria-label="favorites" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
-                            <img loading="lazy" decoding="async" fetchpriority="low"
-                                src="assets/icons/buttons/black-favorite.svg" class="w-[20px] h-[20px] text-black"
-                                alt="black-favorite-icon">
-                        </button>
-                        <button aria-label="account" class="border border-[#C8C8C8] border-1 p-2 rounded-full">
-                            <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/buttons/user.svg"
-                                class="w-[20px] h-[20px]" alt="user-icon">
+                    <!-- Search & shopping cart & User & Menu buttons -->
+                    <div class="flex items-center justify-end lg:justify-between gap-2">
+
+                        <div class="flex items-center gap-1.5 md:gap-3">
+                            <button aria-label="بحث"
+                                class="w-8 h-8 border border-custom-gray rounded-full flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer">
+                                <img src="assets/icons/buttons/search.svg" class="w-3.5 h-3.5 object-contain" alt="بحث">
+                            </button>
+
+                            <button aria-label="المفضلة"
+                                class="hidden w-8 h-8 border border-custom-gray rounded-full lg:flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer">
+                                <img src="assets/icons/buttons/favorite.svg" class="w-3.5 h-3.5 object-contain"
+                                    alt="المفضلة">
+                            </button>
+
+                            <button aria-label="السلة"
+                                class="w-8 h-8 border border-custom-gray rounded-full flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer">
+                                <img src="assets/icons/buttons/shopping-cart.svg" class="w-3.5 h-3.5 object-contain"
+                                    alt="">
+                            </button>
+
+                            <button aria-label="حسابي"
+                                class="w-8 h-8 border border-custom-gray rounded-full flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer">
+                                <img src="assets/icons/buttons/user.svg" class="w-3.5 h-3.5 object-contain" alt="">
+                            </button>
+                        </div>
+
+                        <button id="menu-btn" aria-label="القائمة"
+                            class="md:hidden w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-all cursor-pointer ml-1">
+                            <img src="assets/icons/buttons/menu.svg" class="w-6 h-6" alt="">
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden z-[50] bg-white shadow-md">
-                <ul class="flex flex-col gap-2 px-6 py-4">
-                    <li class="nav-item">
-                        <a href="#" class="cursor-pointer 
-                                                    font-almarai flex items-center gap-1">
-                            <span class="text-[16px] text-[#072F25]">الرئيسية</span>
-                            <img loading="lazy" decoding="async" fetchpriority="low"
-                                src="assets/icons/arrow/down-arrow.svg" alt="down-arrow-icon"
-                                class="w-[10px] h-[10px] m-0 p-0">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
-                                                    font-almarai">الأطباق
-                            الرئيسية</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
-                                                    font-almarai">قائمة
-                            الطعام</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
-                                                    font-almarai">العروض
-                            والخصومات</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="text-[16px] hover:text-[#072F25] cursor-pointer 
-                                                        font-almarai">المدونة</a>
-                    </li>
-                </ul>
+                <div id="mobile-menu"
+                    class="lg:hidden bg-white border-t absolute w-full left-0 shadow-xl overflow-hidden transition-all duration-500 ease-in-out ease-in-out max-h-0 opacity-0">
+                    <ul class="flex flex-col p-5 gap-4 font-almarai text-right">
+                        <li><a href="#" class="block text-primary font-bold">الرئيسية</a></li>
+                        <li><a href="#" class="block text-gray-700">الأطباق الرئيسية</a></li>
+                        <li><a href="#" class="block text-gray-700">قائمة الطعام</a></li>
+                        <li><a href="#" class="block text-gray-700">العروض والخصومات</a></li>
+                        <li><a href="#" class="block text-gray-700">المدونة</a></li>
+                    </ul>
+                </div>
+                <div class="hidden xl:block absolute right-0 top-0">
+                    <img src="assets/puplic/Yellow-line.svg" alt="" srcset="">
+                </div>
             </div>
         </nav>
-        <!-- end navbar section -->
     </header>
-    <!-- end hero section -->
 
     <!-- start Hero section -->
-    <main>
-        <section class="bg-[#F7F2E2] w-full h-[370px] sm:h-[540px] lg:h-[790px] py-5 px-6 md:px-15 hero-section">
-            <div class="flex items-center justify-between gap-6 mb-5 realtive">
-                <!-- right side -->
-                <div class="hidden lg:block overflow-hidden w-[255px]">
-                    <img loading="lazy" decoding="async" fetchpriority="low" src="assets/puplic/peice-meat.svg"
-                        alt="piece-meet" class="absolute top-[25%]">
-                    <img loading="lazy" decoding="async" fetchpriority="low" src="assets/puplic/freah-salad.svg"
-                        alt="fresh-salad" class="absolute top-[15%] left-[87%] -rotate-[7deg] object-contain" />
-                </div>
-                <!-- middle side -->
-                <div class="flex flex-col items-center justify-center w-full lg:w-[740px]">
-                    <h2 class="font-bold mb-4 
-                    font-almarai text-[36px] text-center hidden md:block">
-                        نكهاتنا المميزة توصل لسفرتك بكل حب
-                    </h2>
-                    <p class="mb-8 text-[20px] 
-                    font-almarai hidden md:block text-center">
-                        استمتع بأشهى الأطباق الطازجة، محضرة بعناية، تجمع بين الوصفات التقليدية والنكهات العصرية
-                    </p>
-
-                    <h2 class="font-bold mb-3 
-                    font-almarai text-[20px] text-center block md:hidden">
-                        مطعمك المفضل ودع النكهات تجيك لحد عندك
-                    </h2>
-                    <p class="mb-3 text-[14px] text-center text-[#2F2F2F] 
-                    font-almarai block md:hidden">
-                        استمتع بأطباق طازجة، محضّرة بعناية، تمزج بين الوصفات التقليدية والمذاق العصري
-                    </p>
-
-                    <button
-                        class="bg-[#EB1400] hover:bg-[#BA0000] transition-all duration-300 text-white font-bold w-[132px] md:w-[164px] h-[40px] md:h-[52px] pl-2 pr-2 md:pr-5 rounded-full shadow-lg flex items-center justify-between transition duration-300 cursor-pointer">
-                        <span class="md:text-[18px] font-almarai">اطلب الآن</span>
-                        <div class="bg-white w-[35px] md:w-[40px] h-[35px] md:h-[40px] rounded-full">
-                            <img loading="lazy" decoding="async" fetchpriority="low"
-                                src="assets/icons/arrow/arrow-up.svg" alt="arrow-up-icon" class="w-full w-full">
-                        </div>
-                    </button>
-                </div>
-                <!-- left side -->
-                <div class="hidden lg:block w-[285px]">
-                    <img loading="lazy" decoding="async" fetchpriority="low" src="assets/puplic/fresh-sandwich.svg"
-                        alt="fresh-basil-leaves" class="object-contain" />
-                </div>
+    <main
+        class="bg-light w-full h-[402px] lg:h-[770px] py-[12px] px-2 md:px-4 lg:px-8 xl:px-[200px] space-y-8 realtive hero-section">
+        <div class="freah-salad hidden lg:block absolute right-[5%] w-20 h-20">
+            <img src="assets/puplic/peice-meat.svg" alt="salad" class="w-full h-full object-contain">
+        </div>
+        <div class="flex items-center justify-between realtive">
+            <!-- image  -->
+            <div class="freah-salad hidden lg:block absolute right-0 top-[25%]  w-[170px] h-[223px]">
+                <img src="assets/puplic/freah-salad.svg" alt="salad" class="w-55 h-55 object-cover">
             </div>
-            <!--  slider hero -->
-            <div class="border border-[#FF9924] border-2 rounded-full">
-                <!-- Swiper -->
-                <div class="swiper border-5 border-black rounded-full hero-swiper w-full h-full">
+
+            <!-- cotent of Main (Text) -->
+            <div class="w-full h-[172px] lg:h-[162px] flex flex-col items-center justify-center gap-[16px]">
+                <!-- in small screen -->
+                <h2 class="block lg:hidden font-bold font-almarai text-[20px] leading-[32px] text-center">
+                    مطعمك المفضل ودع النكهات تجيك لحد عندك
+                </h2>
+                <!-- in small screen -->
+                <p class="block lg:hidden text-dark-gray text-center leading-[22px] text-[14px]">
+                    استمتع بأطباق طازجة، محضّرة بعناية، تمزج بين الوصفات التقليدية والمذاق العصري
+                </p>
+                <!-- in large screen -->
+                <h2 class="hidden lg:block font-bold font-almarai text-[20px] leading-[32px] text-center">
+                    نكهاتنا المميزة توصل لسفرتك بكل حب
+                </h2>
+                <!-- in large screen -->
+                <p class="hidden lg:block text-dark-gray text-center leading-[22px] text-[14px]">
+                    استمتع بأشهى الأطباق الطازجة، مُحضّرة بعناية، تجمع بين الوصفات التقليدية والنكهات العصرية
+                </p>
+                <button
+                    class="bg-danger w-[123px] h-[40px] flex items-center justify-around rounded-full text-white cursor-pointer py-3 hover:bg-dark-danger transition-all duration-200 ease-in-out">
+                    <span class="text-[16px] font-almarai">اطلب الآن</span>
+                    <div class="bg-light w-[28px] h-[28px] rounded-full flex items-center justify-center">
+                        <img src="assets/icons/arrow/arrow-up.svg" alt="arrow" class="">
+                    </div>
+                </button>
+            </div>
+            <!-- image  -->
+            <div class="fresh-sandwich hidden lg:block absolute lg:left-0 xl:left-3 top-[22%] w-[287px] h-[226px]">
+                <img src="assets/puplic/fresh-sandwich.svg" alt="sandwich" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <!-- slider -->
+        <div class="w-full h-[158px] lg:h-[450px] xl:h-[485px] relative">
+            <div class="border-2 border-dark-warning rounded-full bg-white/30 backdrop-blur-sm relative">
+                <div class="swiper hero-swiper rounded-full h-[151px] lg:h-[398px] xl:h-[483px] border-4 border-black">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img loading="lazy" decoding="async" fetchpriority="low" src="/assets/slide/slide-1.svg"
-                                alt="slider-1 image" class="rounded-full block object-contain w-full h-full" />
+                            <img src="assets/slide/slide-1.svg" class="w-full h-full object-cover" alt="slide-1">
                         </div>
                         <div class="swiper-slide">
-                            <img loading="lazy" decoding="async" fetchpriority="low" src="/assets/slide/slide-2.svg"
-                                alt="slider-2 image" class="rounded-full block object-contain w-full h-full" />
+                            <img src="assets/slide/slide-2.svg" class="w-full h-full object-cover" alt="slide-2">
                         </div>
                         <div class="swiper-slide">
-                            <img loading="lazy" decoding="async" fetchpriority="low" src="/assets/slide/slide-3.svg"
-                                alt="slider-3 image" class="rounded-full block object-contain w-full h-full" />
+                            <img src="assets/slide/slide-3.svg" class="w-full h-full object-cover" alt="slide-3">
                         </div>
-                    </div>
-                    <!-- Navigation buttons -->
-                    <div class="swiper-button-next bg-[#3F9065] border border-white rounded-full">
-                    </div>
-                    <div class="swiper-button-prev bg-[#3F9065] border border-white rounded-full">
                     </div>
                 </div>
             </div>
-        </section>
+
+            <button
+                class="swiper-button-next next-hero-swiper flex items-center justify-center  bg-accent! text-white! w-[32px]! h-[32px]! lg:w-[42px]! lg:h-[42px]! text-white border border-white rounded-full transition-all active:scale-95 shadow-lg right-4! lg:right-8!"
+                aria-label="التقييم التالي">
+                <img src="assets/icons/arrow/arrow-right.svg" alt="" class="w-5 h-5 object-contain">
+            </button>
+            <button
+                class="swiper-button-prev prev-hero-swiper flex items-center justify-center  bg-accent! text-white! w-[32px]! h-[32px]! lg:w-[42px]! lg:h-[42px]! text-white border border-white rounded-full transition-all active:scale-95 shadow-lg left-4! lg:left-8!"
+                aria-label="التقييم السابق">
+                <img src="assets/icons/arrow/arrow-left.svg" alt="left-arrow" class="w-5 h-5 object-contain">
+            </button>
+        </div>
+        <!-- image  -->
+        <div class="fresh-sandwich hidden lg:block absolute left-5 xl:top-[110%] h-[58px] w-[66px]">
+            <img src="assets/puplic/flower.svg" alt="flower" class="w-full h-full object-contain">
+        </div>
     </main>
     <!-- end Hero section -->
 
     <!-- start categories section -->
-    <section class="categories-section px-5 md:px-15 py-10 space-y-5 mb-10">
-        <div class="flex flex-col items-center gap-3">
-            <h2 class="font-almarai font-bold text-[28px]">استكشف أقسام <span class="text-[#EB1400]">قائمتنا</span></h2>
-            <p class="font-almarai font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">من المذاق الشرقي
-                الأصيل إلى النكهات العالمية… في سفرة، كل طبق هو حكاية</p>
-            <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/golbal/line.svg" alt="line">
+    <section
+        class="categories-section bg-white relative z-10 py-15 px-2 md:px-4 lg:px-8 xl:px-[200px] space-y-8 overflow-hidden">
+        <div class="flex flex-col items-center text-center mb-5 md:h-[100px]">
+            <h2 class="font-almarai font-bold text-[18px] md:text-[28px]">
+                استكشف أقسام <span class="text-danger">قائمتنا</span>
+            </h2>
+
+            <p class="font-almarai font-light text-dark-gray text-[16px] md:text-[18px] text-center">
+                من المذاق الشرقي الأصيل إلى النكهات العالمية… في سفرة، كل طبق هو حكاية
+            </p>
+
+            <img src="assets/icons/golbal/line.svg" alt="line" class="w-48 md:w-64 mt-2">
         </div>
-        <!--categories Swiper -->
-        <div class="swiper categories-swiper">
-            <div class="swiper-wrapper" id="categories-slices">
-                <!-- Slides -->
 
+        <div class="relative w-full px-4">
+            <button
+                class="swiper-button-next next-categories-swiper hidden lg:flex items-center justify-center w-[42px]! h-[42px]! bg-danger text-white rounded-full transition-all active:scale-95 shadow-lg right-0! min-[1500px]:-right-12!"
+                aria-label="التقييم التالي">
+                <img src="assets/icons/arrow/arrow-right.svg" alt="" class="w-5 h-5 object-contain">
+            </button>
+
+            <div class="swiper categories-swiper overflow-hidden py-10 px-2">
+                <div class="swiper-wrapper" id="categories-slices">
+                </div>
             </div>
 
-            <!-- Navigation buttons -->
-            <div class="swiper-button-next bg-[#EB1400] border border-white rounded-full">
-            </div>
-            <div class="swiper-button-prev bg-[#EB1400] border border-white rounded-full">
-            </div>
-
+            <button
+                class="swiper-button-prev prev-categories-swiper hidden lg:flex items-center justify-center w-[42px]! h-[42px]! bg-danger text-white rounded-full transition-all active:scale-95 shadow-lg left-0! min-[1500px]:-left-12!"
+                aria-label="التقييم السابق">
+                <img src="assets/icons/arrow/arrow-left.svg" alt="left-arrow" class="w-5 h-5 object-contain">
+            </button>
         </div>
     </section>
     <!-- end categories section -->
 
     <!-- start products section -->
-    <section class="products-section px-5 md:px-15 pb-10 space-y-5 mb-10">
-        <div class="flex flex-col items-center gap-3 font-almarai">
-            <h2 class="font-bold text-[28px]">تجربة فاخرة بسعر أخف</h2>
-            <p class="font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">دلّل نفسك بأشهى
-                الأطباق المختارة مع خصومات حصرية</p>
-            <img loading="lazy" decoding="async" fetchpriority="low" src="assets/icons/golbal/line.svg" alt="line">
+    <section
+        class="products-section bg-white relative z-10 py-[12px] px-2 md:px-4 lg:px-8 xl:px-[200px] space-y-8 overflow-hidden">
+        <div class="flex flex-col items-center text-center mb-5">
+            <h2 class="font-almarai font-bold text-[18px] lg:text-[28px]">
+                تجربة فاخرة بسعر أخف
+            </h2>
+
+            <p class="font-almarai font-light text-dark-gray text-[16px] lg:text-[18px] text-center">
+                دلّل نفسك بأشهى الأطباق المختارة مع خصومات حصرية
+            </p>
+
+            <img src="assets/icons/golbal/line.svg" alt="line" class="w-48 md:w-64 mt-2">
         </div>
         <!-- start products part -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-3 space-y-2 md:space-y-0"
-            id="products-container">
+        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 space-y-5 mb-5" id="products-container">
 
         </div>
     </section>
     <!-- end products section -->
 
     <!-- start testmonials section -->
-    <section class="testmonials-section px-5 md:px-10 py-10 space-y-5">
-        <div class="flex flex-col items-center gap-3">
-            <h2 class="font-almarai font-bold text-[28px]">قالوا عن سفرة</h2>
-            <p class="font-almarai font-light text-[#2C2C2C] text-[18px] leading-[100%] tracking-[0]">آراء عملائنا تثبت
-                تميزنا، وكل تجربة معهم تزيدنا فخر</p>
-            <img src="assets/icons/golbal/line.svg" alt="line">
+    <section
+        class="testmonials-section bg-white relative z-10 py-[12px] px-2 md:px-4 lg:px-8 xl:px-[150px] h-[605px] mb-15">
+        <div class="flex flex-col items-center lg:h-[100px] mb-5">
+            <h2 class="font-almarai font-bold text-[18px] md:text-[28px]">
+                قالوا عن سفرة
+            </h2>
+
+            <p class="font-almarai font-light text-dark-gray text-[16px] md:text-[18    px] text-center">
+                تجربة عملائنا هي سر نجاحنا… ودي بعض من آرائهم اللي بتفرّحنا كل يوم
+            </p>
+
+            <img src="assets/icons/golbal/line.svg" alt="line" class="w-48 md:w-64 mt-2">
         </div>
-
-
         <!-- start testmonial part -->
-        <div
-            class=" bg-[#FF9924] w-full z-10 h-[466px] md:h-[575px] lg:h-[470px] rounded-[100px] pb-[30px] md:pb-0 px-6 pt-6  md:p-6 relative">
-            <div class="flex items-center justify-between flex-col lg:flex-row">
-                <!-- customers images -->
-                <div class="relative w-full h-[160px] md:h-[275px] lg:h-[336px]">
-
-                    <div class="absolute left-[75%] lg:right-[55%] top-[6%] lg:top-[10%] w-13 md:w-20 h-13 md:h-20">
-                        <img loading="lazy" decoding="async" fetchpriority="low"
-                            src="assets/images/customers/man-customer-3.svg" alt="man-customer-3"
-                            class="w-full h-full rounded-full object-contain border-4 border-white shadow-md cursor-pointer" />
-                    </div>
-
-                    <div class="absolute right-[38%] lg:right-[5%] -top-[3%] lg:top-[25%] w-13 md:w-20 h-13 md:h-20">
-                        <img loading="lazy" src="assets/images/customers/woman-customer-1.svg" alt="woman-customer-1"
-                            class="w-full h-full rounded-full object-contain border-4 border-white shadow-md cursor-pointer" />
-                    </div>
-                    <!-- active review -->
-                    <div
-                        class="active-review w-16 md:w-28 h-16 md:h-28 absolute right-[37%] lg:right-[60%] bottom-[25%] lg:top-[40%]">
-                        <img loading="lazy" decoding="async" fetchpriority="low"
-                            src="assets/images/customers/man-customer-1.svg" alt="man-customer-1"
-                            class="w-full h-full rounded-full object-contain border-2 border-[#3F9065] cursor-pointer active-review-image" />
-                    </div>
-
-                    <div
-                        class="absolute right-[80%] lg:right-[25%] top-[56%] lg:top-[40%] w-13 h-13 md:w-20 md:h-20 z-10">
-                        <img loading="lazy" decoding="async" fetchpriority="low"
-                            src="assets/images/customers/woman-customer-2.svg" alt="woman-customer-2"
-                            class="w-full h-full rounded-full object-contain border-4 border-white shadow-md cursor-pointer" />
-                    </div>
-
-                    <div class="absolute right-[70%] lg:right-[40%] top-[13%] lg:top-[65%] w-12 h-12 md:w-16 md:h-16">
-                        <img loading="lazy" decoding="async" fetchpriority="low"
-                            src="assets/images/customers/woman-customer-3.svg" alt="woman-customer-3"
-                            class="w-full h-full rounded-full object-contain border-4 border-white shadow-sm cursor-pointer" />
-                    </div>
-
-                    <div class="absolute right-[1-%] top-[55%] w-13 h-13 md:w-20 md:h-20">
-                        <img loading="lazy" decoding="async" fetchpriority="low"
-                            src="assets/images/customers/man-customer-2.svg" alt="man-customer-2"
-                            class="w-full h-full rounded-full object-contain border-4 border-white shadow-sm cursor-pointer" />
-                    </div>
-                </div>
-
-
-                <!-- csutomer review & testmonial -->
-                <div
-                    class="relative bg-white w-full h-[271px] lg:h-[398px] mx-auto rounded-[90px] md:rounded-[100px] lg:rounded-[160px] shadow-lg pt-5 lg:pt-10 px-12 lg:px-20 pb-6 font-almarai">
-                    <div class="flex items-center justify-between mb-5 lg:mb-8">
-                        <div class="stars flex items-center justify-center gap-1 bg-[#FF9924] py-1 px-2 rounded-full">
-                            <span>
-                                <i data-lucide="star" class="w-[12px] md:w-[16px] text-white text-bold"></i>
-                            </span>
-                            <span>
-                                <i data-lucide="star" class="w-[12px] md:w-[16px] text-white text-bold"></i>
-                            </span>
-                            <span>
-                                <i data-lucide="star" class="w-[12px] md:w-[16px] text-white text-bold"></i>
-                            </span>
-                            <span>
-                                <i data-lucide="star" class="w-[12px] md:w-[16px] text-white text-bold"></i>
-                            </span>
-                            <span>
-                                <i data-lucide="star" class="w-[12px] md:w-[16px] text-white text-bold"></i>
-                            </span>
-                        </div>
-                        <img src="assets/puplic/comma.svg" alt="comma-image"
-                            class="w-[30px] md:h-[40px] lg:w-[63px] h-[30px] md:h-[40px] lg:h-[63px]">
-                    </div>
-                    <div
-                        class="font-almarai font-light leading-relaxed mb-5 text-[12px] md:text-[18px] customer-review">
-                        <p class="text-[#323232]" id="review-text">
-                            طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد... بالعكس، وصل بدري وحار كأني آكل داخل
-                            المطعم. البرجر خطير، اللحم عصاري
-                            والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمون بأدق التفاصيل.
-                        </p>
-                    </div>
-                    <div class="mt-0 md:mt-5 lg:pb-8 customer-name">
-                        <h4 class="text-[#191919] font-bold text-[14px] md:text-[20px]" id="review-name">فهد سالم </h4>
-                        <p class="text-[#747474] text-[12px]" id="review-position">مدير فني</p>
-                    </div>
-                    <img src="assets/puplic/packet-phrise.svg" alt="packet-phrise-image"
-                        class="absolute bottom-0 left-0 md:left-[2%] md:top-[60%] lg:bottom-[5%] lg:-left-[1%] w-[80px] md:w-[105px] object-cover"
-                        loading="lazy" decoding="async" fetchpriority="low">
-                </div>
+        <section class="relative">
+            <div
+                class="absolute -right-3 lg:right-10 rotate-15 lg:rotate-20 rotat w-[70px] h-[56px] lg:w-[112px] lg:h-[89px]">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="assets/puplic/cheese.svg"
+                    alt="man-customer-2" class="w-full h-full rounded-full object-contain transalte cursor-pointer" />
             </div>
-        </div>
+            <div class="lg:flex items-center justify-center gap-4">
+                <button aria-label="التقييم السابق"
+                    class="hidden lg:flex w-[33px] h-[33px] lg:w-[42px] lg:h-[42px] rounded-full flex items-center justify-center bg-accent hover:opacity-90 transition-opacity">
+                    <img src="assets/icons/arrow/arrow-right.svg" alt="" aria-hidden="true">
+                </button>
+                <div
+                    class=" bg-linear-to-b from-[#FFAF53] to-dark-warning w-full z-10 h-[446px] lg:h-[470px] rounded-[110px] lg:rounded-[200px] pb-8 lg:pb-0 pt-4 px-5 text-center relative lg:flex items-center justify-center">
+                    <div class="flex items-center justify-center flex-col lg:flex-row">
+                        <!-- customers images -->
+                        <div class="relative w-full h-[160px] lg:h-[336px]">
+                            <!-- man 2 -->
+                            <div
+                                class="absolute left-[80%] top-[30%] lg:top-[50%] lg:left-[73%] w-[55px] h-[55px] lg:w-[100px] lg:h-[100px]">
+                                <img loading="lazy" decoding="async" fetchpriority="low"
+                                    src="assets/images/customers/man-customer-2.svg" alt="man-customer-2"
+                                    class="w-full h-full rounded-full object-contain shadow-md cursor-pointer -scale-x-100 customer-image"
+                                    data-review-id="2" />
+                            </div>
+                            <!-- man 3 -->
+                            <div
+                                class="absolute right-[25%] top-[0%] lg:right-[55%] tlg:top-[5%] w-[45px] h-[45px] lg:w-[100px] lg:h-[100px]">
+                                <img loading="lazy" decoding="async" fetchpriority="low"
+                                    src="assets/images/customers/man-customer-3.svg" alt="man-customer-3"
+                                    class="w-full h-full rounded-full object-contain shadow-md cursor-pointer -scale-x-100 customer-image"
+                                    data-review-id="3" />
+                            </div>
+                            <!-- woman 1 -->
+                            <div
+                                class="absolute right-[60%] lg:right-[10%] top-[3%] lg:top-[5%] w-[50px] lg:w-[100px] lg:h-[100px]">
+                                <img loading="lazy" src="assets/images/customers/woman-customer-1.svg"
+                                    alt="woman-customer-1"
+                                    class="w-full h-full rounded-full object-contain shadow-md cursor-pointer customer-image"
+                                    data-review-id="10" />
+                            </div>
+                            <!-- active review -->
+                            <div
+                                class="active-review w-[73px] md:w-28 h-[73px] md:h-28 absolute right-[37%] lg:right-[60%] bottom-[15%] lg:top-[40%]">
+                                <div
+                                    class="absolute left-1/2 lg:-left-9 -bottom-12 lg:bottom-0 lg:rotate-[270deg] w-[2px] h-[50px] lg:h-[100px] bg-accent z-0">
+                                </div>
+                                <img loading="lazy" decoding="async" fetchpriority="low"
+                                    src="assets/images/customers/man-customer-1.svg" alt="man-customer-1"
+                                    class="w-full h-full rounded-full object-contain cursor-pointer -scale-x-100 active-review-image customer-image"
+                                    data-review-id="1" id="main-active-img" />
+                            </div>
+                            <!-- woman 2 -->
+                            <div
+                                class="absolute right-[80%] lg:right-[30%] top-[35%] lg:top-[40%] w-[55px] h-[55px] lg:w-[100px] lg:h-[100px] transition-all duration-500">
+                                <img loading="lazy" decoding="async" fetchpriority="low"
+                                    src="assets/images/customers/woman-customer-2.svg" alt="woman-customer-2"
+                                    class="w-full h-full rounded-full object-contain shadow-md cursor-pointer customer-image"
+                                    data-review-id="20" />
+                            </div>
+                            <!-- woman 3 -->
+                            <div class="absolute right-[80%] lg:right-[60%] top-[35%] lg:top-[80%] w-[55px] h-[55px]
+                                lg:w-[50px] lg:h-[50px]">
+                                <img loading="lazy" decoding="async" fetchpriority="low"
+                                    src="assets/images/customers/woman-customer-3.svg" alt="woman-customer-3"
+                                    class="w-full h-full rounded-full object-contain shadow-md cursor-pointer customer-image"
+                                    data-review-id="30" />
+                            </div>
+                        </div>
+                        <!-- csutomer review & testmonial -->
+                        <div
+                            class="bg-white w-full h-[250px] lg:h-[400px] rounded-[100px] lg:rounded-[160px] shadow-lg relative flex flex-col justify-center lg:pb-5 px-10 md:px-16 lg:px-24 font-almarai text-right">
+
+                            <div class="flex items-center justify-between mb-4 px-3 mb-0">
+                                <div
+                                    class="stars flex items-center justify-center gap-1 bg-dark-warning px-3 md:px-4 rounded-full shadow-sm lg:h-[32px]">
+                                    <i data-lucide="star" class="w-[8px] md:w-[16px] text-white fill-white"></i>
+                                    <i data-lucide="star" class="w-[8px] md:w-[16px] text-white fill-white"></i>
+                                    <i data-lucide="star" class="w-[8px] md:w-[16px] text-white fill-white"></i>
+                                    <i data-lucide="star" class="w-[8px] md:w-[16px] text-white fill-white"></i>
+                                    <i data-lucide="star" class="w-[8px] md:w-[16px] text-white fill-white"></i>
+                                </div>
+                                <img src="assets/puplic/comma.svg" alt="comma-image"
+                                    class="w-[30px] md:w-[45px] lg:w-[50px] object-contain">
+                            </div>
+
+                            <div class="customer-review mb-4 md:mb-6">
+                                <p class="text-dark-gray text-[12px] md:text-[18px] lg:text-[20px] leading-[1.8] font-medium"
+                                    id="review-text">
+                                    طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد... بالعكس، وصل بدري وحار كأني آكل
+                                    داخل
+                                    المطعم. البرجر رهيب، اللحم عصاري والجبنة سايحة، والبطاطس مقرمشة زي ما أحب.
+                                </p>
+                            </div>
+
+                            <div class="customer-name pr-4 py-1">
+                                <h4 class="text-[#191919] font-bold text-[16px] md:text-[22px] leading-none"
+                                    id="review-name">فهد سالم</h4>
+                                <p class="text-light-gray text-[12px] md:text-[14px] mt-1" id="review-position">مدير فني
+                                </p>
+                            </div>
+
+                            <div
+                                class="absolute -bottom-6 lg:-bottom-5 -left-4 md:-left-6 lg:-left-5 w-[90px] md:w-[100px] lg:w-[103px] transform ">
+                                <img src="assets/puplic/packet-phrise.svg" alt="packet-phrise-image"
+                                    class="w-full h-full object-contain drop-shadow-xl -rotate-12 lg:rotate-0"
+                                    loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex lg:hidden items-center justify-center gap-3 mt-10 z-100">
+                        <button aria-label="التقييم السابق"
+                            class="w-[33px] h-[33px] rounded-full flex items-center justify-center bg-accent hover:opacity-90 transition-opacity">
+                            <img src="assets/icons/arrow/arrow-right.svg" alt="" aria-hidden="true">
+                        </button>
+
+                        <button aria-label="التقييم التالي"
+                            class="w-[33px] h-[33px] rounded-full flex items-center justify-center bg-accent hover:opacity-90 transition-opacity">
+                            <img src="assets/icons/arrow/arrow-left.svg" alt="" aria-hidden="true">
+                        </button>
+                    </div>
+                </div>
+                <button aria-label="التقييم التالي"
+                    class="hidden lg:flex w-[33px] h-[33px] lg:w-[42px] lg:h-[42px] rounded-full flex items-center justify-center bg-accent hover:opacity-90 transition-opacity">
+                    <img src="assets/icons/arrow/arrow-left.svg" alt="" aria-hidden="true">
+                </button>
+
+            </div>
+        </section>
 
     </section>
     <!-- end testmonials section -->
 
     <!-- start footer section -->
     <footer
-        class="bg-[#072F25] px-1 md:px-10 w-full pb-5 md:block flex flex-col items-center justify-center font-almarai">
-        <div class=" flex items-center justify-center mb-3">
+        class="bg-primary px-4 md:px-10 w-full pb-5 md:block flex flex-col items-center justify-center relative overflow-hidden font-almarai">
+        <div class="opacity-0 lg:opacity-100 flex items-center justify-center mb-3">
             <img loading="lazy" decoding="async" fetchpriority="low"
                 src="assets/puplic/pizza-ingredients-circle-tomatoes-basil-olives-spices-delicious-pepperoni-pizza.svg"
                 alt="pizza image" class="w-[185px] object-contain">
         </div>
+        <div class="absolute -right-5 -top-6 w-[86px]">
+            <img loading="lazy" decoding="async" fetchpriority="low" src="assets/puplic/slice-pizza.svg"
+                alt="pizza image" class="w-full object-contain">
+        </div>
         <div class="flex items-center w-full justify-center gap-7">
-            <div class="h-[1px] w-full bg-[#A1A1A1]"></div>
+            <div class="h-px w-full bg-[#A1A1A1]"></div>
             <div class="logo">
                 <img src="assets/puplic/logo.svg" alt="logo" loading="lazy" decoding="async" fetchpriority="low"
                     class="w-[450px]">
             </div>
-            <div class="h-[1px] w-full bg-[#A1A1A1]"></div>
+            <div class="h-px w-full bg-[#A1A1A1]"></div>
         </div>
         <div
             class="flex flex-col md:flex-row flex-wrap items-center md:items-start justify-between gap-5 space-y-4 mt-5">

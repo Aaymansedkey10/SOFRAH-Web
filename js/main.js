@@ -53,8 +53,7 @@ const categories = [
   {
     id: 3,
     title: "بيتزا",
-    image:
-      "../assets/images/categories/crispy-mixed-pizza-with-olives-sausage.svg",
+    image: "../assets/images/categories/crispy-mixed-pizza-with-olives-sausage.svg",
     avilable: 23,
   },
   {
@@ -128,22 +127,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // variables
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
-  // Add Event Listener to button for mobile menu
+  const customers = document.querySelectorAll(".customer-image");
+  const productsContainer = document.getElementById("products-container");
+  const categoriesSlices = document.getElementById("categories-slices");
+
+  // Event for Menu button in the small screen
   menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+    if (mobileMenu.classList.contains("max-h-0")) {
+      mobileMenu.classList.remove("max-h-0", "opacity-0");
+      mobileMenu.classList.add("max-h-[500px]", "opacity-100");
+    } else {
+      mobileMenu.classList.remove("max-h-[500px]", "opacity-100");
+      mobileMenu.classList.add("max-h-0", "opacity-0");
+    }
   });
 
-  const categoriesSlices = document.getElementById("categories-slices");
-  const productsContainer = document.getElementById("products-container");
+  // create the produts section content
   food.map((product) => {
     productsContainer.innerHTML += createProductCard(product);
   });
-  categories.map(
-    (category) => (categoriesSlices.innerHTML += createCategorySlider(category))
-  );
+
+  // generate the categories sliders content
+  categoriesSlices.innerHTML += categories
+    .map((category) => createCategorySlider(category))
+    .join("");
+
+  // Events for customers review section
+  customers.forEach((c) => {
+    c.addEventListener("click", () => {
+      const reviewId = Number(c.getAttribute("data-review-id"));
+      selectCustomerReview(reviewId, c);
+    });
+  });
 });
 
-// initial swiper slider
+// create the Hero section slider
 const heroSwiper = new Swiper(".hero-swiper", {
   effect: "fade",
   fadeEffect: {
@@ -156,113 +174,135 @@ const heroSwiper = new Swiper(".hero-swiper", {
     disableOnInteraction: false,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".next-hero-swiper",
+    prevEl: ".prev-hero-swiper",
   },
+  observer: true,
+  observeParents: true,
 });
+
+// create the categories slider
 var categoriesSwiper = new Swiper(".categories-swiper", {
-  slidesPerView: 1.5,
+  slidesPerView: 3,
   spaceBetween: 10,
   speed: 700,
+  grabCursor: true,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".next-categories-swiper",
+    prevEl: ".prev-categories-swiper",
   },
   breakpoints: {
-    640: {
+    320: {
       slidesPerView: 3,
+      spaceBetween: 10,
     },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 15,
+    },
+
     1024: {
       slidesPerView: 5,
+      spaceBetween: 20,
+    },
+    1280: {
+      slidesPerView: 6,
+      spaceBetween: 30,
     },
   },
 });
+
 // fuction for create product card
 function createProductCard(product) {
-  const productCard = `
-     <div class="product-card group relative w-[285px] h-[470px] mx-auto font-almarai">
-                <div
-                    class="relative w-[285px] h-[347px] flex items-center justify-center overflow-hidden bg-[#F7F2E2] rounded-[55px] transition-all duration-500 ease-in-out group-hover:bg-[#072F25] curved-bg">
-                    <!-- Discount badge -->
-                    <p class="absolute top-[15%] left-[3%] rounded bg-[#EB1400] text-white text-sm px-3 py-1 z-20">
-                        خصم <span>${product.discount}%</span>
-                    </p>
-                    <!-- Side buttons -->
-                    <div
-                        class="absolute right-[1%] top-[12%] space-y-3 pr-5 opacity-0 invisible translate-x-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:translate-x-0 z-20">
-                        <button aria-label="favorite"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md hover:bg-[#FF9924] hover:text-white transition-all duration-300">
-                            <img src="assets/icons/buttons/favorite.svg" alt="favorite-icon" loading="lazy"
-                                class="w-[18px] h-[18px]">
-                        </button>
-                        <button aria-label="details"
-                            class="bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full shadow-md hover:bg-[#FF9924] hover:text-white transition-all duration-300">
-                            <img src="assets/icons/buttons/eye.svg" alt="details-icon" loading="lazy"
-                                class="w-[18px] h-[18px]">
-                        </button>
-                    </div>
+  const { title, description, image, price, discount } = product;
+  return `
+    <div class="product-card group relative w-[162px] h-[320px] lg:w-[255px] lg:h-[470px] mx-auto font-almarai overflow-visible">
+        <div class="relative mb-4 lg:h-[347px]">
+            <div class="w-full h-[196px] lg:h-[327px] bg-light transition-all duration-500 ease-in-out group-hover:bg-accent flex items-center justify-center relative shadow-sm overflow-hidden curved-card">
+                <p class="absolute top-[14%] -left-1 rounded-tr-xl rounded-bl-xl bg-danger text-white text-[12px] lg:text-[16px] px-3 py-1 z-20 font-bold">
+                    خصم <span>${discount}%</span>
+                </p>
 
-                    <!-- Product image -->
-                    <img src=${product.image}
-                        alt=${product.title}
-                        class="w-[225px] h-[140px] transition-all duration-500 ease-in-out group-hover:-rotate-[9deg]">
+                <div class="absolute right-[8%] top-[10%] space-y-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button aria-label="أضف للمفضلة" class="bg-white w-[35px] h-[35px] flex items-center justify-center rounded-full shadow-sm border border-gray-100 hover:bg-orange-400 transition-colors">
+                        <img src="assets/icons/buttons/favorite.svg" class="w-4" alt="">
+                    </button>
+                    <button aria-label="عرض التفاصيل" class="bg-white w-[35px] h-[35px] flex items-center justify-center rounded-full shadow-sm border border-gray-100 hover:bg-orange-400 transition-colors">
+                        <img src="assets/icons/buttons/eye.svg" class="w-4" alt="">
+                    </button>
                 </div>
 
-                <!-- Add to cart button -->
-                <button
-                    class="absolute bottom-[25%] left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 bg-[#FF9924] text-black rounded-full w-[169px] h-[48px] font-almarai font-medium shadow-md transition-all duration-500 ease-in-out group-hover:bg-[#EB1400] group-hover:text-white">
-                    <i data-lucide="shopping-cart" class="w-[16px] h-[16px]"></i>
-                    <span>أضف إلى السلة</span>
-                </button>
+                <img src="${image}" alt="${title}"
+                    class="w-[120px] lg:w-[200px] object-cover z-10 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 drop-shadow-[0_15px_10px_rgba(0,0,0,0.1)]">
+            </div>
 
-                <!-- Product details -->
-                <div class="font-almarai text-center mt-3 px-4 space-y-1.5">
-                    <h6 class="font-bold text-[18px]">${product.title}</h6>
-                    <p class="text-[14px] text-[#525252] leading-tight">
-                   ${product.description}
-                    </p>
-                    <div class="flex items-center justify-center gap-2">
-                        <p class="text-[#EB1400] font-extrabold text-[16px]">
-                        ${
-                          product.price -
-                          (product.price * product.discount) / 100
-                        }
-                        رس</p>
-                        <del class="text-[#9D9D9D] text-[14px]">
-                        ${product.price} رس</del>
+            <button
+                class="w-[124px] h-[36px] lg:w-[169px] lg:h-[50px] flex items-center justify-center gap-2 bg-dark-warning text-black rounded-full font-bold shadow-lg group-hover:bg-danger group-hover:text-white absolute -bottom-4 lg:bottom-0 right-1/2 translate-x-1/2 z-30">
+                <img src="assets/icons/buttons/shopping-cart.svg" class="w-4 group-hover:invert" alt="">
+                <span class="text-[12px] lg:text-[16px]">أضف إلى السلة</span>
+            </button>
+        </div>
+
+        <div class="text-center w-full mt-6">
+            <h6 class="font-bold text-[14px] lg:text-[18px] text-dark-gray">${title}</h6>
+            <p class="text-[10px] lg:text-[14px] text-gray-500 leading-[14px] mt-1 h-[32px] overflow-hidden">
+                ${description}
+            </p>
+            <div class="flex items-center justify-center gap-1 mt-2">
+                <span class="text-danger text-[18px] lg:text-[24px]">
+                    ${price} <span class="lg:text-[16px]">رس</span>
+                </span>
+                <del class="text-meduin-gray text-[12px] lg:text-[16px]">
+                    ${Math.round(price * 1.3)} رس
+                </del>
+            </div>
+        </div>
+    </div>
+  `;
+}
+
+// create the category card.
+function createCategorySlider(category) {
+  return `
+        <div class="swiper-slide">
+            <div class="group w-[105px] h-[125px] md:w-[170px] md:h-[220px] flex flex-col items-center justify-center gap-2 md:gap-4 bg-light pt-[10px] pb-[10px] md:pt-[16px] md:pb-[16px] px-[22px] category-card transition-all duration-500 ease-in-out rounded-b-[24px] rounded-t-full mx-auto cursor-pointer hover:bg-accent">
+                <img loading="lazy" src="${category.image}"
+                    alt="${category.title}"
+                    class="w-[62px] h-[55px] md:w-[109px] md:h-[102px] object-contain relative z-10 transition-all duration-500 ease-in-out group-hover:-rotate-12" />
+                <div class="font-almarai text-center">
+                    <h5 class="text-[14px] md:text-[20px] font-bold text-dark-gray group-hover:text-white transition-colors duration-300">
+                        ${category.title}
+                    </h5>
+                    <div class="text-[10px] md:text-[16px] w-full text-light-gray group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-1">
+                        <span>${category.avilable}</span>
+                        <span>${category.title === "بيتزا" ? "نوع متاح" : "وجبة متاحة"}</span>
                     </div>
                 </div>
             </div>
+        </div>
   `;
-  return productCard;
 }
 
-function createCategorySlider(category) {
-  lucide.createIcons();
-  const categorySlider = `
-       <div class="swiper-slide">
-                    <div
-                        class="group w-full text-center bg-[#F7F2E2] py-4 px-5 category-card
-                       transition-all duration-500 ease-in-out hover:bg-[#3F9065] rounded-xl mx-auto rounded-t-[100px]">
-                        <img loading="lazy" src=${category.image}
-                            alt=${category.title}
-                            class="w-[100px] h-[100px] mb-3 object-contain mx-auto transition-all duration-500 group-hover:-rotate-[12.45deg]" />
-                        <div class="font-almarai transition-all duration-300">
-                            <h5 class="md:text-[20px] text-black group-hover:text-white transition-all duration-300">
-                               ${category.title}
-                            </h5>
-                            <div
-                                class="flex items-center justify-center gap-2 mt-2 text-[#636363] group-hover:text-white transition-all duration-300">
-                                <span>${category.avilable}</span>
-                                <p>${
-                                  category.title === "بيتزا"
-                                    ? "نوع متاح"
-                                    : "وجبة متاحة"
-                                }</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-  `;
-  return categorySlider;
+// select the customer review and update the active image url
+function selectCustomerReview(id, clickedImgElement) {
+  const activeImage = document.querySelector(".active-review-image");
+  const reviewName = document.getElementById("review-name");
+  const reviewText = document.getElementById("review-text");
+  const reviewPosition = document.getElementById("review-position");
+  const newSrc = clickedImgElement.getAttribute("src");
+  activeImage.style.transform = "scale(0.9)";
+  const oldSrc = activeImage.getAttribute("src");
+
+  setTimeout(() => {
+    activeImage.setAttribute("src", newSrc);
+    clickedImgElement.setAttribute("src", oldSrc);
+    const isFounded = reviews.find((rev) => rev.id === id);
+    if (isFounded) {
+      reviewName.innerText = isFounded.customerName;
+      reviewText.innerText = isFounded.customerReview;
+      reviewPosition.innerText = isFounded.customerPosition;
+    }
+    activeImage.style.opacity = "1";
+    activeImage.style.transform = "scale(1)";
+  }, 300);
 }
