@@ -184,7 +184,7 @@ const heroSwiper = new Swiper(".hero-swiper", {
 // create the categories slider
 var categoriesSwiper = new Swiper(".categories-swiper", {
   slidesPerView: 3,
-  spaceBetween: 10,
+  spaceBetween: 15,
   speed: 700,
   grabCursor: true,
   navigation: {
@@ -207,7 +207,7 @@ var categoriesSwiper = new Swiper(".categories-swiper", {
     },
     1280: {
       slidesPerView: 6,
-      spaceBetween: 30,
+      spaceBetween: 10,
     },
   },
 });
@@ -265,7 +265,7 @@ function createProductCard(product) {
 function createCategorySlider(category) {
   return `
         <div class="swiper-slide">
-            <div class="group w-[105px] h-[125px] md:w-[170px] md:h-[220px] flex flex-col items-center justify-center gap-2 md:gap-4 bg-light pt-[10px] pb-[10px] md:pt-[16px] md:pb-[16px] px-[22px] category-card transition-all duration-500 ease-in-out rounded-b-[24px] rounded-t-full mx-auto cursor-pointer hover:bg-accent">
+            <div class="group w-[105px] h-[125px] md:w-[155px] md:h-[220px] flex flex-col items-center justify-center gap-2 md:gap-4 bg-light pt-[10px] pb-[10px] md:pt-[16px] md:pb-[16px] px-[22px] category-card transition-all duration-500 ease-in-out rounded-b-[24px] rounded-t-full mx-auto cursor-pointer hover:bg-accent">
                 <img loading="lazy" src="${category.image}"
                     alt="${category.title}"
                     class="w-[62px] h-[55px] md:w-[109px] md:h-[102px] object-contain relative z-10 transition-all duration-500 ease-in-out group-hover:-rotate-12" />

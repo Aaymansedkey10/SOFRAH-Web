@@ -3,6 +3,12 @@
   content: "" !important;
   display: none !important;
 }
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 1 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
 .categories-section .swiper-button-next {
   right: -6% !important;
 }
